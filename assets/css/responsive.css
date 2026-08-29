@@ -1,0 +1,232 @@
+/* ==========================================================================
+   TURTLE MAARKS — RESPONSIVE DESIGN & MOBILE OPTIMIZATIONS
+   Seamless support for 320px, 375px, 430px, 576px, 768px, 992px, 1200px, 1400px+
+   ========================================================================== */
+
+/* Large screens (1400px+) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Laptops & Desktops (992px - 1199.98px) */
+@media (max-width: 1199.98px) {
+  .tm-nav-link {
+    padding: 0.4rem 0.55rem !important;
+    font-size: 0.8125rem;
+  }
+}
+
+/* Tablets (768px - 991.98px) */
+@media (max-width: 991.98px) {
+  .tm-hero-compact {
+    padding: 2.5rem 0;
+    text-align: center;
+  }
+  .tm-hero-p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tm-hero-booking-card {
+    margin-top: 1rem;
+  }
+  .tm-cart-drawer {
+    width: 100% !important;
+    max-width: 420px;
+  }
+  .tm-product-btns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Screens (576px - 767.98px) */
+@media (max-width: 767.98px) {
+  .tm-topbar {
+    font-size: 0.75rem;
+    padding: 0.3rem 0;
+  }
+  .tm-section-title {
+    font-size: 1.55rem;
+  }
+  .tm-section-sub {
+    font-size: 0.85rem;
+  }
+  .tm-hero-h1 {
+    font-size: 1.85rem;
+  }
+  .tm-hero-p {
+    font-size: 0.9rem;
+  }
+  .tm-trust-metric {
+    gap: 0.5rem;
+  }
+  .tm-trust-metric-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+  .tm-trust-metric h6 {
+    font-size: 0.8125rem;
+  }
+  .tm-trust-metric span {
+    font-size: 0.7rem;
+  }
+  .tm-floating-pill-wrap {
+    bottom: 15px;
+    right: 15px;
+  }
+  .tm-floating-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.775rem;
+  }
+}
+
+/* Small Mobile Screens (320px - 575.98px) */
+@media (max-width: 575.98px) {
+  .tm-topbar .d-none.d-md-inline {
+    display: none !important;
+  }
+  .tm-brand-logo {
+    height: 34px;
+  }
+  .tm-cat-tile {
+    padding: 0.75rem 0.5rem;
+  }
+  .tm-cat-img-box {
+    width: 48px;
+    height: 48px;
+  }
+  .tm-cat-img-box img {
+    max-height: 32px;
+  }
+  .tm-cat-name {
+    font-size: 0.775rem;
+  }
+  .tm-product-media {
+    min-height: 140px;
+    padding: 1rem 0.5rem;
+  }
+  .tm-product-img {
+    max-height: 100px;
+  }
+  .tm-product-body {
+    padding: 0.85rem;
+  }
+  .tm-product-title {
+    font-size: 0.875rem;
+  }
+  .tm-product-sale-price {
+    font-size: 1rem;
+  }
+  .tm-toast {
+    min-width: calc(100vw - 30px);
+    max-width: calc(100vw - 30px);
+  }
+}
+
+/* ==========================================================================
+   FOOTER RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+
+/* Tablets & Small Laptops (768px - 991.98px) */
+@media (max-width: 991.98px) {
+  .tm-footer-newsletter-card {
+    padding: 1.75rem;
+  }
+  .tm-footer-main {
+    padding: 2rem 0 2.5rem 0;
+  }
+}
+
+/* Mobile Screens (576px - 767.98px) */
+@media (max-width: 767.98px) {
+  .tm-footer-trust-bar {
+    padding: 1.25rem 0;
+  }
+  .tm-trust-pillar {
+    padding: 0.35rem;
+    gap: 0.65rem;
+  }
+  .tm-trust-icon-box {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+  .tm-trust-title {
+    font-size: 0.84rem;
+  }
+  .tm-trust-sub {
+    font-size: 0.7rem;
+  }
+  .tm-footer-newsletter-card {
+    padding: 1.5rem 1.25rem;
+  }
+  .tm-footer-newsletter-card .d-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  .tm-newsletter-icon {
+    margin: 0 auto;
+  }
+  .tm-footer-heading {
+    cursor: pointer;
+    padding: 0.75rem 0;
+    margin-bottom: 0.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    user-select: none;
+  }
+  .tm-footer-heading::after {
+    display: none;
+  }
+  .tm-footer-links {
+    padding: 0.5rem 0 0.85rem 0.25rem;
+  }
+  .tm-footer-bottom {
+    padding: 1.25rem 0 1.75rem 0;
+    text-align: center;
+  }
+}
+
+/* Small Mobile Screens (< 576px) */
+@media (max-width: 575.98px) {
+  .tm-footer-newsletter-wrap {
+    padding: 1.5rem 0 0.5rem 0;
+  }
+  .tm-newsletter-form .input-group {
+    flex-direction: column;
+    padding: 6px;
+    border-radius: 12px;
+  }
+  .tm-newsletter-form .input-group-text {
+    display: none;
+  }
+  .tm-newsletter-input {
+    text-align: center;
+    padding: 0.65rem;
+  }
+  .tm-newsletter-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem;
+  }
+  .tm-footer-social-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.05rem;
+  }
+  .tm-brand-tag {
+    font-size: 0.725rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .tm-pay-badge, .tm-cert-badge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .tm-footer-cta-box {
+    padding: 1rem;
+  }
+}
+

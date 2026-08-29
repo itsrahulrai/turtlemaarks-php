@@ -1,0 +1,68 @@
+# ==========================================================================
+# TURTLE MAARKS HEARING HEALTH — Apache configuration
+# ==========================================================================
+
+DirectoryIndex index.php index.html
+
+# --------------------------------------------------------------------------
+# 301 redirect every old .html URL to its .php equivalent (preserves SEO
+# ranking and any existing backlinks / Google Business Profile links).
+# --------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # /page.html  ->  /page.php   (only when the .php file actually exists)
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+  RewriteCond %{DOCUMENT_ROOT}/%1.php -f
+  RewriteRule ^ /%1.php [R=301,L]
+
+  # Allow extensionless URLs:  /products  ->  /products.php
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.php -f
+  RewriteRule ^(.+?)/?$ $1.php [L]
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Block direct browser access to the include partials
+# --------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^includes/ - [F,L]
+</IfModule>
+
+# --------------------------------------------------------------------------
+# GZIP compression
+# --------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json image/svg+xml
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Browser caching for static assets
+# --------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp             "access plus 1 year"
+  ExpiresByType image/png              "access plus 1 year"
+  ExpiresByType image/jpeg             "access plus 1 year"
+  ExpiresByType image/svg+xml          "access plus 1 year"
+  ExpiresByType text/css               "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/html              "access plus 0 seconds"
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Basic security headers
+# --------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Custom error page
+# --------------------------------------------------------------------------
+ErrorDocument 404 /index.php
