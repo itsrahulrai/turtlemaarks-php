@@ -47,12 +47,15 @@ include __DIR__ . '/includes/header.php';
   <div class="container">
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
       <nav aria-label="breadcrumb">
-        <ol class="breadcrumb mb-0 flex-nowrap overflow-auto">
-          <li class="breadcrumb-item"><a href="<?= e(url('index.php')) ?>" class="text-decoration-none text-muted">Home</a></li>
-          <li class="breadcrumb-item"><a href="<?= e(url('products.php')) ?>" class="text-decoration-none text-muted">Hearing Aids</a></li>
-          <li class="breadcrumb-item"><a href="<?= e(url('products.php?brand=' . urlencode($p['brand']))) ?>" class="text-decoration-none text-muted"><?= e($p['brand']) ?></a></li>
-          <li class="breadcrumb-item active text-navy fw-bold text-nowrap" aria-current="page"><?= e($p['name']) ?></li>
-        </ol>
+        <div class="tm-breadcrumb-pill tm-breadcrumb-pill-light mb-0">
+          <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <a href="<?= e(url('products.php')) ?>">Hearing Aids</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <a href="<?= e(url('products.php?brand=' . urlencode($p['brand']))) ?>"><?= e($p['brand']) ?></a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <span class="tm-breadcrumb-current text-truncate" style="max-width: 260px;" aria-current="page"><?= e($p['name']) ?></span>
+        </div>
       </nav>
       <div class="d-none d-md-flex align-items-center gap-2">
         <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">

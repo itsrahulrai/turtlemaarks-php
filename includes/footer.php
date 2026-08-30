@@ -15,7 +15,7 @@ $page_inline_js = $page_inline_js ?? '';
   <!-- ============ FOOTER ============ -->
   <footer class="tm-footer">
     
-    <!-- MAIN 5-COLUMN FOOTER (MATCHING REFERENCE DESIGN) -->
+    <!-- MAIN 5-COLUMN FOOTER -->
     <div class="tm-footer-ref-main">
       <div class="container">
         <div class="row g-4 g-lg-0 tm-ref-row">
@@ -46,6 +46,12 @@ $page_inline_js = $page_inline_js ?? '';
               <a href="https://www.youtube.com/@TurtleMaarksHearingHealth" target="_blank" rel="noopener" class="tm-ref-social-btn tm-ref-soc-yt" title="YouTube" aria-label="YouTube">
                 <i class="bi bi-youtube"></i>
               </a>
+            </div>
+            
+            <div class="tm-ref-trust-tag mt-3">
+              <span class="badge rounded-pill bg-light text-navy border py-2 px-3 fw-semibold">
+                <i class="bi bi-shield-check text-orange me-1"></i> RCI Certified Audiologists
+              </span>
             </div>
           </div>
 
@@ -79,14 +85,10 @@ $page_inline_js = $page_inline_js ?? '';
               <li><a href="<?= e(url('diagnostic-services.php#bera')) ?>"><span class="tm-ref-chevron">&gt;</span> BERA / ABR Audiometry</a></li>
               <li><a href="<?= e(url('diagnostic-services.php#oae')) ?>"><span class="tm-ref-chevron">&gt;</span> OAE Hearing Screening</a></li>
               <li><a href="<?= e(url('service-speech-therapy.php')) ?>"><span class="tm-ref-chevron">&gt;</span> Speech &amp; Language Therapy</a></li>
-              <li><a href="<?= e(url('service-home-visit.php')) ?>"><span class="tm-ref-chevron">&gt;</span> Senior Citizen Home Visit</a></li>
             </ul>
-            <a href="<?= e(url('diagnostic-services.php')) ?>" class="tm-ref-view-all">
-              View All Services &rarr;
-            </a>
           </div>
 
-          <!-- Column 4: Products (Formerly Hearing Aids) -->
+          <!-- Column 4: Products -->
           <div class="col-lg-2 col-md-6 col-6 tm-ref-col">
             <div class="tm-ref-heading-wrap">
               <h6 class="tm-ref-heading">Products</h6>
@@ -96,16 +98,13 @@ $page_inline_js = $page_inline_js ?? '';
               <li><a href="<?= e(url('products.php?style=RIC')) ?>"><span class="tm-ref-chevron">&gt;</span> Receiver-in-Canal (RIC)</a></li>
               <li><a href="<?= e(url('products.php?style=CIC')) ?>"><span class="tm-ref-chevron">&gt;</span> Invisible In-Canal (CIC)</a></li>
               <li><a href="<?= e(url('products.php?style=BTE')) ?>"><span class="tm-ref-chevron">&gt;</span> Behind-The-Ear (BTE)</a></li>
+              <li><a href="<?= e(url('products.php?style=ITE')) ?>"><span class="tm-ref-chevron">&gt;</span> In-The-Ear (ITE) Aids</a></li>
               <li><a href="<?= e(url('product-category.php')) ?>"><span class="tm-ref-chevron">&gt;</span> Rechargeable Models</a></li>
               <li><a href="<?= e(url('products.php')) ?>"><span class="tm-ref-chevron">&gt;</span> Bluetooth &amp; AI Aids</a></li>
-              <li><a href="<?= e(url('products.php')) ?>"><span class="tm-ref-chevron">&gt;</span> Batteries &amp; Accessories</a></li>
             </ul>
-            <a href="<?= e(url('products.php')) ?>" class="tm-ref-view-all">
-              View All Products &rarr;
-            </a>
           </div>
 
-          <!-- Column 5: Contact Us (With Soft Icon Cards) -->
+          <!-- Column 5: Contact Us -->
           <div class="col-lg-3 col-md-6 tm-ref-col tm-ref-col-contact">
             <div class="tm-ref-heading-wrap">
               <h6 class="tm-ref-heading">Contact Us</h6>
@@ -116,34 +115,34 @@ $page_inline_js = $page_inline_js ?? '';
               <!-- Clinic Address -->
               <div class="tm-ref-contact-item">
                 <div class="tm-ref-contact-icon">
-                  <i class="bi bi-geo-alt"></i>
+                  <i class="bi bi-geo-alt-fill"></i>
                 </div>
                 <div class="tm-ref-contact-body">
-                  <div class="tm-ref-contact-title">Clinic (Delhi NCR, India)</div>
+                  <div class="tm-ref-contact-title">Visit Our Clinic</div>
                   <div class="tm-ref-contact-detail"><?= e(SITE_ADDRESS) ?></div>
-                </div>
-              </div>
-
-              <!-- Email Us -->
-              <div class="tm-ref-contact-item">
-                <div class="tm-ref-contact-icon">
-                  <i class="bi bi-envelope"></i>
-                </div>
-                <div class="tm-ref-contact-body">
-                  <div class="tm-ref-contact-title">Email Us</div>
-                  <a href="mailto:<?= e(SITE_EMAIL) ?>" class="tm-ref-contact-link"><?= e(SITE_EMAIL) ?></a>
                 </div>
               </div>
 
               <!-- Call Us -->
               <div class="tm-ref-contact-item">
                 <div class="tm-ref-contact-icon">
-                  <i class="bi bi-telephone"></i>
+                  <i class="bi bi-telephone-fill"></i>
                 </div>
                 <div class="tm-ref-contact-body">
-                  <div class="tm-ref-contact-title">Call Us</div>
+                  <div class="tm-ref-contact-title">Call Helpline</div>
                   <a href="tel:<?= e(SITE_PHONE_RAW) ?>" class="tm-ref-contact-link"><?= e(SITE_PHONE) ?></a>
-                  <div class="tm-ref-contact-sub"><?= SITE_HOURS_SHORT ?></div>
+                  <div class="tm-ref-contact-sub"><i class="bi bi-clock-fill text-success"></i> <?= SITE_HOURS_SHORT ?></div>
+                </div>
+              </div>
+
+              <!-- Email Us -->
+              <div class="tm-ref-contact-item">
+                <div class="tm-ref-contact-icon">
+                  <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div class="tm-ref-contact-body">
+                  <div class="tm-ref-contact-title">Email Us</div>
+                  <a href="mailto:<?= e(SITE_EMAIL) ?>" class="tm-ref-contact-link"><?= e(SITE_EMAIL) ?></a>
                 </div>
               </div>
             </div>
@@ -172,9 +171,7 @@ $page_inline_js = $page_inline_js ?? '';
             <span class="tm-ref-pipe">|</span>
             <a href="#tmWarrantyModal" data-bs-toggle="modal">Refund &amp; Cancellation</a>
             <span class="tm-ref-pipe">|</span>
-            <a href="#tmWarrantyModal" data-bs-toggle="modal">Shipping &amp; Delivery</a>
-            <span class="tm-ref-pipe">|</span>
-            <a href="<?= e(url('contact.php')) ?>">Sitemap</a>
+            <a href="#tmWarrantyModal" data-bs-toggle="modal">Warranty &amp; Service</a>
           </div>
 
         </div>
@@ -259,13 +256,31 @@ $page_inline_js = $page_inline_js ?? '';
     </div>
   </div>
 
-  <!-- ============ FLOATING ACTION BUTTONS ============ -->
-  <div class="tm-floating-pill-wrap">
-    <a href="https://wa.me/<?= e(SITE_WHATSAPP) ?>" target="_blank" rel="noopener" class="tm-floating-btn" title="WhatsApp Support">
-      <i class="bi bi-whatsapp fs-6"></i> WhatsApp
+  <!-- ============ FLOATING ACTION BUTTONS (LEFT: WHATSAPP, RIGHT: CALL DOCTOR) ============ -->
+  <!-- Left: WhatsApp Button -->
+  <div class="tm-floating-left-wrap" aria-label="WhatsApp Contact">
+    <a href="https://wa.me/<?= e(SITE_WHATSAPP) ?>" target="_blank" rel="noopener" class="tm-floating-btn tm-floating-btn-wa" title="Chat on WhatsApp">
+      <span class="tm-floating-icon-wrap">
+        <i class="bi bi-whatsapp"></i>
+        <span class="tm-floating-pulse"></span>
+      </span>
+      <span class="tm-floating-text">
+        <span class="tm-floating-sub">Chat Online</span>
+        <span class="tm-floating-title">WhatsApp</span>
+      </span>
     </a>
+  </div>
+
+  <!-- Right: Call Doctor Button -->
+  <div class="tm-floating-right-wrap" aria-label="Phone Helpline">
     <a href="tel:<?= e(SITE_PHONE_RAW) ?>" class="tm-floating-btn tm-floating-btn-call" title="Call Doctor Helpline">
-      <i class="bi bi-telephone-fill fs-6"></i> Call Doctor
+      <span class="tm-floating-icon-wrap">
+        <i class="bi bi-telephone-fill"></i>
+      </span>
+      <span class="tm-floating-text">
+        <span class="tm-floating-sub">Helpline</span>
+        <span class="tm-floating-title">Call Doctor</span>
+      </span>
     </a>
   </div>
 

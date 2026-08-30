@@ -11,18 +11,18 @@ include __DIR__ . '/includes/header.php';
   <!-- =========================================================================
        HERO HEADER (CLEAN & MINIMAL)
        ========================================================================= -->
-  <section class="tm-about-hero py-5 text-center">
-    <div class="container py-2">
+  <section class="tm-about-hero py-4 text-center">
+    <div class="container py-1">
       <!-- Modern Frosted Breadcrumb Pill -->
-      <nav aria-label="breadcrumb" class="d-inline-flex mb-3">
+      <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
         <div class="tm-breadcrumb-pill">
-          <a href="index.php">Home</a>
+          <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
           <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
           <span class="tm-breadcrumb-current" aria-current="page">About Us</span>
         </div>
       </nav>
 
-      <h1 class="display-5 fw-bold text-white mb-2">Turtle Maarks</h1>
+      <h1 class="display-6 fw-bold text-white mb-2">Turtle Maarks</h1>
       <p class="text-white-50 mx-auto small mb-0" style="max-width: 520px;">
         Over 20 years of trusted audiological and hearing healthcare in Delhi NCR.
       </p>

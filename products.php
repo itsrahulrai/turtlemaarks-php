@@ -40,11 +40,18 @@ function product_page_url($page_num) {
 include __DIR__ . '/includes/header.php';
 ?>
 
-<section class="py-4 bg-navy text-white position-relative">
-    <div class="container text-center">
-      <span class="tm-pill tm-pill-orange mb-2"><i class="bi bi-earbuds"></i> Authorized Global Portfolio</span>
-      <h1 class="h3 fw-bold text-white mb-1">Digital Hearing Aids</h1>
-      <p class="text-white-50 small mb-0">Compare 50+ models with official warranty, 7-day free trial, and lifetime acoustic fine-tuning.</p>
+  <!-- HERO BANNER -->
+  <section class="tm-page-hero text-center position-relative">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
+        <div class="tm-breadcrumb-pill">
+          <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <span class="tm-breadcrumb-current" aria-current="page">Hearing Aids</span>
+        </div>
+      </nav>
+      <h1 class="display-6 fw-bold text-white mb-2 font-heading">Digital Hearing Aids</h1>
+      <p class="text-white-50 mx-auto small mb-0" style="max-width: 620px;">Compare 50+ models with official warranty, 7-day free trial, and lifetime acoustic fine-tuning.</p>
     </div>
   </section>
 

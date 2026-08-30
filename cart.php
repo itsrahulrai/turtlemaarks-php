@@ -8,10 +8,18 @@ $active_nav       = '';
 include __DIR__ . '/includes/header.php';
 ?>
 
-<section class="py-4 bg-navy text-white text-center position-relative">
+  <!-- HERO BANNER -->
+  <section class="tm-page-hero text-center position-relative">
     <div class="container">
-      <h1 class="h3 fw-bold text-white mb-1">Your Shopping Cart</h1>
-      <p class="text-white-50 small mb-3">Review selected hearing devices, diagnostic services, and accessories.</p>
+      <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
+        <div class="tm-breadcrumb-pill">
+          <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <span class="tm-breadcrumb-current" aria-current="page">Shopping Cart</span>
+        </div>
+      </nav>
+      <h1 class="display-6 fw-bold text-white mb-1 font-heading">Your Shopping Cart</h1>
+      <p class="text-white-50 mx-auto small mb-3" style="max-width: 580px;">Review selected hearing devices, diagnostic services, and accessories.</p>
       
       <!-- Stepper Indicator -->
       <div class="tm-cart-step-nav mb-0">

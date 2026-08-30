@@ -8,10 +8,19 @@ $active_nav       = 'services';
 include __DIR__ . '/includes/header.php';
 ?>
 
-<section class="py-5 bg-navy text-white text-center position-relative">
-    <div class="container py-2">
-      <span class="tm-pill tm-pill-orange mb-2"><i class="bi bi-activity"></i> Clinical Electrophysiology & Audiometry</span>
-      <h1 class="display-6 fw-bold text-white mb-2">Diagnostic Hearing Tests</h1>
+  <!-- HERO BANNER -->
+  <section class="tm-page-hero text-center position-relative">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
+        <div class="tm-breadcrumb-pill">
+          <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <a href="<?= e(url('services.php')) ?>">Services</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <span class="tm-breadcrumb-current" aria-current="page">Diagnostic Tests</span>
+        </div>
+      </nav>
+      <h1 class="display-6 fw-bold text-white mb-2 font-heading">Diagnostic Hearing Tests</h1>
       <p class="text-white-50 mx-auto small mb-0" style="max-width: 620px;">Gold-standard hearing assessments conducted in calibrated ANSI-certified sound booths with same-day reports.</p>
     </div>
   </section>

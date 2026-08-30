@@ -11,11 +11,11 @@ include __DIR__ . '/includes/header.php';
 <!-- =========================================================================
      HERO SECTION (CLEAN & MINIMAL)
      ========================================================================= -->
-<section class="py-5 bg-navy text-white text-center position-relative">
-  <div class="container py-2">
+<section class="tm-page-hero text-center position-relative">
+  <div class="container">
     
     <!-- Clean Breadcrumb Pill -->
-    <nav aria-label="breadcrumb" class="d-inline-flex mb-3">
+    <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
       <div class="tm-breadcrumb-pill">
         <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
         <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>

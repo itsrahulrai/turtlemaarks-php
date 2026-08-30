@@ -8,7 +8,24 @@ $active_nav       = '';
 include __DIR__ . '/includes/header.php';
 ?>
 
-<section class="py-5 bg-light">
+  <!-- HERO BANNER -->
+  <section class="tm-page-hero text-center position-relative">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
+        <div class="tm-breadcrumb-pill">
+          <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <a href="<?= e(url('cart.php')) ?>">Cart</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <span class="tm-breadcrumb-current" aria-current="page">Checkout</span>
+        </div>
+      </nav>
+      <h1 class="display-6 fw-bold text-white mb-1 font-heading">Secure Checkout</h1>
+      <p class="text-white-50 mx-auto small mb-0" style="max-width: 580px;">Complete your patient details and choose your delivery or in-clinic fitting preference.</p>
+    </div>
+  </section>
+
+  <section class="py-5 bg-light">
     <div class="container">
       <div class="row g-4">
         

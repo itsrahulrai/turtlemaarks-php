@@ -8,25 +8,23 @@ $active_nav       = 'services';
 include __DIR__ . '/includes/header.php';
 ?>
 
-<div class="py-2 bg-white border-bottom small">
-    <div class="container">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb mb-0">
-          <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none text-muted">Home</a></li>
-          <li class="breadcrumb-item"><a href="services.php" class="text-decoration-none text-muted">Services</a></li>
-          <li class="breadcrumb-item active text-navy fw-bold" aria-current="page">Tinnitus Retraining Therapy</li>
-        </ol>
-      </nav>
-    </div>
-  </div>
-
   <!-- SERVICE HERO -->
   <section class="tm-service-hero">
     <div class="container">
+      <!-- Unified Frosted Breadcrumb Pill -->
+      <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
+        <div class="tm-breadcrumb-pill">
+          <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <a href="<?= e(url('services.php')) ?>">Services</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <span class="tm-breadcrumb-current" aria-current="page">Tinnitus Therapy</span>
+        </div>
+      </nav>
+
       <div class="row align-items-center g-4">
         <div class="col-lg-8">
-          <span class="tm-pill tm-pill-orange mb-2"><i class="bi bi-soundwave"></i> Advanced Acoustic Relief</span>
-          <h1 class="display-6 fw-bold text-white mb-2">Tinnitus Retraining & Sound Masking Therapy</h1>
+          <h1 class="display-6 fw-bold text-white mb-2 font-heading">Tinnitus Retraining &amp; Sound Masking Therapy</h1>
           <p class="text-white-50 mb-3" style="max-width: 680px;">Chronic ringing, buzzing, roaring, or clicking in your ears can disrupt sleep, focus, and mental peace. Our clinical protocols combine computerized pitch matching, notch sound therapy, and neuro-habituation counseling.</p>
           <div class="d-flex flex-wrap gap-3 text-white-50 small">
             <div><i class="bi bi-clock-fill text-orange"></i> <strong>Session:</strong> 45 Mins Clinical Evaluation</div>

@@ -13,19 +13,27 @@ $active_nav       = 'products';
 include __DIR__ . '/includes/header.php';
 ?>
 
-<section class="py-5 bg-navy text-white text-center position-relative">
-  <div class="container py-2">
-    <h1 class="h3 fw-bold text-white mb-3">Search Products &amp; Clinical Tests</h1>
-    <form class="mx-auto" style="max-width: 600px;" method="get" action="<?= e(url('search.php')) ?>">
-      <div class="input-group input-group-lg bg-white rounded-pill p-1 shadow-sm">
-        <input type="text" name="q" id="tmSearchPageInput" value="<?= e($q) ?>"
-               class="form-control border-0 rounded-pill ps-3 ps-sm-4"
-               placeholder="Search Phonak, Oticon, PTA, BERA, batteries...">
-        <button class="tm-btn tm-btn-primary rounded-pill px-3 px-sm-4" type="submit"><i class="bi bi-search"></i><span class="d-none d-sm-inline ms-1">Search</span></button>
-      </div>
-    </form>
-  </div>
-</section>
+  <!-- HERO BANNER -->
+  <section class="tm-page-hero text-center position-relative">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
+        <div class="tm-breadcrumb-pill">
+          <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <span class="tm-breadcrumb-current" aria-current="page">Search</span>
+        </div>
+      </nav>
+      <h1 class="display-6 fw-bold text-white mb-3 font-heading">Search Catalog &amp; Services</h1>
+      <form class="mx-auto" style="max-width: 600px;" method="get" action="<?= e(url('search.php')) ?>">
+        <div class="input-group bg-white rounded-pill p-1 shadow-sm">
+          <input type="text" name="q" id="tmSearchPageInput" value="<?= e($q) ?>"
+                 class="form-control border-0 rounded-pill ps-3 ps-sm-4"
+                 placeholder="Search Phonak, Oticon, PTA, BERA, batteries...">
+          <button class="tm-btn tm-btn-primary rounded-pill px-3 px-sm-4" type="submit"><i class="bi bi-search"></i><span class="d-none d-sm-inline ms-1">Search</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
 
 <!-- RESULTS -->
 <section class="py-5 bg-light">

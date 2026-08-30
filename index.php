@@ -602,9 +602,567 @@ include __DIR__ . '/includes/header.php';
     </div>
   </section>
 
+  <!-- =========================================================================
+       4.5. INTERACTIVE HEARING AID FINDER (MAJOR CONVERSION SECTION - 2-PART LAYOUT)
+       ========================================================================= -->
+  <section class="py-5 tm-finder-section border-top border-bottom" id="hearing-aid-finder">
+    <div class="container">
+      
+      <!-- Section Header (Clean & Impressive) -->
+      <div class="text-center max-w-750 mx-auto mb-4">
+        <div class="tm-finder-header-badge mb-2">
+          <i class="bi bi-stars"></i> Smart Hearing Match Tool
+        </div>
+        <h2 class="tm-section-title mb-2">
+          Not Sure Which <span>Hearing Aid</span> Is Right For You?
+        </h2>
+        <p class="tm-section-sub mb-0 max-w-650 mx-auto">
+          Answer a few simple questions and discover hearing solutions suited to your hearing needs, lifestyle and budget.
+        </p>
+      </div>
 
+      <!-- Main 2-Part Grid Container -->
+      <div class="row g-4 align-items-stretch justify-content-center">
+        
+        <!-- LEFT PART: INTERACTIVE 5-STEP HIGH-CONVERSION QUIZ CARD -->
+        <div class="col-lg-7 col-xl-7 d-flex">
+          <div class="tm-finder-quiz-card p-3 p-md-4 w-100 d-flex flex-column justify-content-between">
+            
+            <!-- Stepper Header -->
+            <div class="mb-3 pb-1">
+              <div class="tm-step-pills-wrap mb-2">
+                
+                <!-- Step 1 Node -->
+                <button type="button" class="tm-step-pill-node active" id="tmStepNode1" onclick="goToFinderStep(1)" title="Hearing Situation">
+                  <span class="node-circle"><i class="bi bi-ear"></i></span>
+                  <span class="node-title">1. Hearing</span>
+                </button>
 
+                <!-- Step 2 Node -->
+                <button type="button" class="tm-step-pill-node" id="tmStepNode2" onclick="goToFinderStep(2)" title="Daily Lifestyle">
+                  <span class="node-circle"><i class="bi bi-person-walking"></i></span>
+                  <span class="node-title">2. Lifestyle</span>
+                </button>
 
+                <!-- Step 3 Node -->
+                <button type="button" class="tm-step-pill-node" id="tmStepNode3" onclick="goToFinderStep(3)" title="Device Style">
+                  <span class="node-circle"><i class="bi bi-sliders"></i></span>
+                  <span class="node-title">3. Style</span>
+                </button>
+
+                <!-- Step 4 Node -->
+                <button type="button" class="tm-step-pill-node" id="tmStepNode4" onclick="goToFinderStep(4)" title="Budget Range">
+                  <span class="node-circle"><i class="bi bi-wallet2"></i></span>
+                  <span class="node-title">4. Budget</span>
+                </button>
+
+                <!-- Step 5 Node -->
+                <button type="button" class="tm-step-pill-node" id="tmStepNode5" onclick="goToFinderStep(5)" title="Your Matches">
+                  <span class="node-circle"><i class="bi bi-patch-check-fill"></i></span>
+                  <span class="node-title">5. Matches</span>
+                </button>
+
+              </div>
+
+              <!-- Animated Progress Bar -->
+              <div class="tm-quiz-progress">
+                <div class="tm-quiz-progress-bar" id="tmFinderProgressBar" style="width: 20%;"></div>
+              </div>
+            </div>
+
+            <!-- =============================================================
+                 STEP 1: TELL US ABOUT YOUR HEARING
+                 ============================================================= -->
+            <div class="tm-quiz-step-pane active flex-grow-1" id="finderStepPane1">
+              <div class="mb-2">
+                <span class="badge bg-primary-subtle text-primary rounded-pill px-2 py-1 extra-small mb-1 fw-semibold" style="font-size: 0.7rem;">Step 1 of 4</span>
+                <h5 class="fw-bold text-navy mb-0 font-heading fs-6">Tell us about your hearing situation</h5>
+                <p class="text-secondary extra-small mb-0">What best describes what you or your loved one experiences?</p>
+              </div>
+
+              <div class="row g-2 mb-3">
+                <div class="col-sm-6">
+                  <div class="tm-quiz-option-card selected" onclick="selectFinderOption(1, this, 'mild')">
+                    <div class="opt-icon-box"><i class="bi bi-volume-up"></i></div>
+                    <div>
+                      <h6 class="fw-bold text-navy mb-0 small">Mild Difficulty</h6>
+                      <p class="text-secondary extra-small mb-0">Struggling in background noise &amp; TV.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="tm-quiz-option-card" onclick="selectFinderOption(1, this, 'moderate')">
+                    <div class="opt-icon-box"><i class="bi bi-telephone-inbound"></i></div>
+                    <div>
+                      <h6 class="fw-bold text-navy mb-0 small">Moderate Loss</h6>
+                      <p class="text-secondary extra-small mb-0">Missing phone &amp; group talks.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="tm-quiz-option-card" onclick="selectFinderOption(1, this, 'severe')">
+                    <div class="opt-icon-box"><i class="bi bi-soundwave"></i></div>
+                    <div>
+                      <h6 class="fw-bold text-navy mb-0 small">Severe Loss</h6>
+                      <p class="text-secondary extra-small mb-0">Needs high power amplification.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="tm-quiz-option-card" onclick="selectFinderOption(1, this, 'tinnitus')">
+                    <div class="opt-icon-box"><i class="bi bi-bell-slash"></i></div>
+                    <div>
+                      <h6 class="fw-bold text-navy mb-0 small">Tinnitus / Ringing</h6>
+                      <p class="text-secondary extra-small mb-0">Persistent ear buzzing sounds.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center border-top pt-2 mt-auto">
+                <span class="text-muted extra-small"><i class="bi bi-shield-lock-fill text-success me-1"></i> 100% Free &amp; Unbiased</span>
+                <button type="button" class="tm-btn tm-btn-primary tm-btn-sm" onclick="goToFinderStep(2)">
+                  Next: Lifestyle <i class="bi bi-arrow-right ms-1"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- =============================================================
+                 STEP 2: CHOOSE YOUR LIFESTYLE
+                 ============================================================= -->
+            <div class="tm-quiz-step-pane flex-grow-1" id="finderStepPane2">
+              <div class="mb-2">
+                <span class="badge bg-primary-subtle text-primary rounded-pill px-2 py-1 extra-small mb-1 fw-semibold" style="font-size: 0.7rem;">Step 2 of 4</span>
+                <h5 class="fw-bold text-navy mb-0 font-heading fs-6">Choose your primary daily lifestyle</h5>
+                <p class="text-secondary extra-small mb-0">Where do you spend most of your active weekly hours?</p>
+              </div>
+
+              <div class="row g-2 mb-3">
+                <div class="col-sm-6">
+                  <div class="tm-quiz-option-card selected" onclick="selectFinderOption(2, this, 'active')">
+                    <div class="opt-icon-box"><i class="bi bi-compass"></i></div>
+                    <div>
+                      <h6 class="fw-bold text-navy mb-0 small">Active &amp; Social</h6>
+                      <p class="text-secondary extra-small mb-0">Travel, restaurants &amp; outdoor events.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="tm-quiz-option-card" onclick="selectFinderOption(2, this, 'work')">
+                    <div class="opt-icon-box"><i class="bi bi-briefcase"></i></div>
+                    <div>
+                      <h6 class="fw-bold text-navy mb-0 small">Work &amp; Meetings</h6>
+                      <p class="text-secondary extra-small mb-0">Office boardrooms &amp; video calls.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="tm-quiz-option-card" onclick="selectFinderOption(2, this, 'home')">
+                    <div class="opt-icon-box"><i class="bi bi-house-heart"></i></div>
+                    <div>
+                      <h6 class="fw-bold text-navy mb-0 small">Quiet &amp; Home</h6>
+                      <p class="text-secondary extra-small mb-0">Family talks &amp; TV relaxation.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="tm-quiz-option-card" onclick="selectFinderOption(2, this, 'senior')">
+                    <div class="opt-icon-box"><i class="bi bi-heart-pulse"></i></div>
+                    <div>
+                      <h6 class="fw-bold text-navy mb-0 small">Senior / Easy Care</h6>
+                      <p class="text-secondary extra-small mb-0">Drop-in charging &amp; auto-clarity.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center border-top pt-2 mt-auto">
+                <button type="button" class="btn btn-outline-secondary btn-sm py-1" onclick="goToFinderStep(1)">
+                  <i class="bi bi-arrow-left me-1"></i> Back
+                </button>
+                <button type="button" class="tm-btn tm-btn-primary tm-btn-sm" onclick="goToFinderStep(3)">
+                  Next: Style <i class="bi bi-arrow-right ms-1"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- =============================================================
+                 STEP 3: SELECT YOUR PREFERENCES
+                 ============================================================= -->
+            <div class="tm-quiz-step-pane flex-grow-1" id="finderStepPane3">
+              <div class="mb-2">
+                <span class="badge bg-primary-subtle text-primary rounded-pill px-2 py-1 extra-small mb-1 fw-semibold" style="font-size: 0.7rem;">Step 3 of 4</span>
+                <h5 class="fw-bold text-navy mb-0 font-heading fs-6">Select your style &amp; feature preferences</h5>
+                <p class="text-secondary extra-small mb-0">What is most important in terms of appearance &amp; connectivity?</p>
+              </div>
+
+              <div class="row g-2 mb-3">
+                <div class="col-sm-6">
+                  <div class="tm-quiz-option-card selected" onclick="selectFinderOption(3, this, 'invisible')">
+                    <div class="opt-icon-box"><i class="bi bi-eye-slash"></i></div>
+                    <div>
+                      <h6 class="fw-bold text-navy mb-0 small">100% Invisible (IIC/CIC)</h6>
+                      <p class="text-secondary extra-small mb-0">Completely hidden inside the canal.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="tm-quiz-option-card" onclick="selectFinderOption(3, this, 'ric')">
+                    <div class="opt-icon-box"><i class="bi bi-earbuds"></i></div>
+                    <div>
+                      <h6 class="fw-bold text-navy mb-0 small">Discreet RIC</h6>
+                      <p class="text-secondary extra-small mb-0">Slim wire &amp; natural airflow.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="tm-quiz-option-card" onclick="selectFinderOption(3, this, 'rechargeable')">
+                    <div class="opt-icon-box"><i class="bi bi-battery-charging"></i></div>
+                    <div>
+                      <h6 class="fw-bold text-navy mb-0 small">Rechargeable Battery</h6>
+                      <p class="text-secondary extra-small mb-0">30+ hours overnight charging case.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="tm-quiz-option-card" onclick="selectFinderOption(3, this, 'bluetooth')">
+                    <div class="opt-icon-box"><i class="bi bi-bluetooth"></i></div>
+                    <div>
+                      <h6 class="fw-bold text-navy mb-0 small">Bluetooth Calls</h6>
+                      <p class="text-secondary extra-small mb-0">Direct audio from iPhone &amp; Android.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center border-top pt-2 mt-auto">
+                <button type="button" class="btn btn-outline-secondary btn-sm py-1" onclick="goToFinderStep(2)">
+                  <i class="bi bi-arrow-left me-1"></i> Back
+                </button>
+                <button type="button" class="tm-btn tm-btn-primary tm-btn-sm" onclick="goToFinderStep(4)">
+                  Next: Budget <i class="bi bi-arrow-right ms-1"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- =============================================================
+                 STEP 4: CHOOSE YOUR BUDGET
+                 ============================================================= -->
+            <div class="tm-quiz-step-pane flex-grow-1" id="finderStepPane4">
+              <div class="mb-2">
+                <span class="badge bg-primary-subtle text-primary rounded-pill px-2 py-1 extra-small mb-1 fw-semibold" style="font-size: 0.7rem;">Step 4 of 4</span>
+                <h5 class="fw-bold text-navy mb-0 font-heading fs-6">Choose your preferred budget range</h5>
+                <p class="text-secondary extra-small mb-0">Includes fitting, lifetime sound tuning &amp; warranty.</p>
+              </div>
+
+              <div class="row g-2 mb-3">
+                <div class="col-sm-4">
+                  <div class="tm-quiz-option-card" onclick="selectFinderOption(4, this, 'economy')">
+                    <div class="opt-icon-box"><i class="bi bi-tag"></i></div>
+                    <div>
+                      <span class="badge bg-light text-navy border extra-small mb-1" style="font-size: 0.65rem;">Essential</span>
+                      <h6 class="fw-bold text-navy mb-0 small">₹18.5k – ₹45k</h6>
+                      <p class="text-secondary extra-small mb-0" style="font-size: 0.68rem;">Clear digital speech.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="tm-quiz-option-card selected" onclick="selectFinderOption(4, this, 'advanced')">
+                    <div class="opt-icon-box"><i class="bi bi-award"></i></div>
+                    <div>
+                      <span class="badge bg-orange text-white extra-small mb-1" style="font-size: 0.65rem;">Popular</span>
+                      <h6 class="fw-bold text-navy mb-0 small">₹50k – ₹1.2L</h6>
+                      <p class="text-secondary extra-small mb-0" style="font-size: 0.68rem;">Rechargeable &amp; BT.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="tm-quiz-option-card" onclick="selectFinderOption(4, this, 'premium')">
+                    <div class="opt-icon-box"><i class="bi bi-cpu"></i></div>
+                    <div>
+                      <span class="badge bg-primary-subtle text-primary extra-small mb-1" style="font-size: 0.65rem;">AI Flagship</span>
+                      <h6 class="fw-bold text-navy mb-0 small">₹1.3L – ₹3.5L+</h6>
+                      <p class="text-secondary extra-small mb-0" style="font-size: 0.68rem;">Neural AI chip.</p>
+                    </div>
+                    <div class="opt-radio-badge"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center border-top pt-2 mt-auto">
+                <button type="button" class="btn btn-outline-secondary btn-sm py-1" onclick="goToFinderStep(3)">
+                  <i class="bi bi-arrow-left me-1"></i> Back
+                </button>
+                <button type="button" class="tm-btn tm-btn-primary tm-btn-sm shadow-sm" onclick="generateFinderResults()">
+                  Find My Hearing Aid <i class="bi bi-arrow-right ms-1"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- =============================================================
+                 STEP 5: GET PERSONALIZED RECOMMENDATIONS (RESULTS)
+                 ============================================================= -->
+            <div class="tm-quiz-step-pane flex-grow-1" id="finderStepPane5">
+              <div class="mb-2">
+                <span class="badge bg-success-subtle text-success rounded-pill px-2 py-1 extra-small mb-1 fw-semibold" style="font-size: 0.7rem;">
+                  <i class="bi bi-check2-circle me-1"></i> 3 Tailored Matches Found
+                </span>
+                <h5 class="fw-bold text-navy mb-0 font-heading fs-6">Your Personalized Hearing Solutions</h5>
+                <p class="text-secondary extra-small mb-0">Curated specifically based on your selected preferences.</p>
+              </div>
+
+              <!-- Top Primary Match Card -->
+              <div class="tm-finder-result-box mb-2 p-3">
+                <div class="row align-items-center g-2">
+                  <div class="col-sm-3 text-center">
+                    <div class="p-1 bg-white rounded-3 shadow-sm d-inline-block">
+                      <img id="resPrimaryImg" src="assets/images/hearing-aid/ric.webp" alt="Primary Match" style="max-height: 75px;" class="img-fluid">
+                    </div>
+                    <div class="mt-1">
+                      <span class="badge bg-orange text-white px-2 py-1 extra-small fw-bold" style="font-size: 0.65rem;">
+                        <i class="bi bi-fire me-1"></i> <span id="resPrimaryMatchScore">98% Match</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <div class="badge bg-white bg-opacity-10 text-white-75 rounded-pill px-2 py-1 extra-small mb-1" style="font-size: 0.65rem;" id="resPrimaryBrandTag">
+                      🇨🇭 Phonak &bull; Switzerland
+                    </div>
+                    <h6 class="fw-bold text-white mb-1 font-heading" id="resPrimaryTitle">Phonak Audéo Infinio Ultra 90</h6>
+                    <p class="text-white-70 extra-small mb-1" style="font-size: 0.72rem; line-height: 1.3;" id="resPrimaryDesc">
+                      Powered by the DEEPSONIC™ real-time neural chip with AutoSense OS 6.0. Instant speech clarity with universal Bluetooth.
+                    </p>
+                    
+                    <div class="d-flex flex-wrap gap-1 extra-small" style="font-size: 0.68rem;" id="resPrimaryFeatures">
+                      <span class="badge bg-white bg-opacity-10 text-white"><i class="bi bi-cpu me-1"></i> AI Chip</span>
+                      <span class="badge bg-white bg-opacity-10 text-white"><i class="bi bi-battery-charging me-1"></i> 30h</span>
+                      <span class="badge bg-white bg-opacity-10 text-white"><i class="bi bi-bluetooth me-1"></i> BT</span>
+                      <span class="badge bg-white bg-opacity-10 text-white"><i class="bi bi-shield-check me-1"></i> 4Y</span>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3 text-sm-end border-start-sm border-white border-opacity-10">
+                    <div class="extra-small text-white-50" style="font-size: 0.68rem;">Starting From</div>
+                    <div class="fs-6 fw-bold text-orange mb-1" id="resPrimaryPrice">₹85,000</div>
+                    <div class="d-grid gap-1">
+                      <a href="<?= e(url('book-appointment.php')) ?>" class="tm-btn tm-btn-primary tm-btn-sm text-center py-1 extra-small" style="font-size: 0.75rem;">
+                        <i class="bi bi-calendar-check me-1"></i> Free Trial
+                      </a>
+                      <a id="resPrimaryWaBtn" href="https://wa.me/<?= e(SITE_WHATSAPP) ?>?text=Hi%20Turtle%20Maarks,%20I%20completed%20the%20Hearing%20Aid%20Finder%20quiz%20and%20got%20matched%20with%20Phonak%20Audéo%20Infinio.%20Please%20guide%20me." target="_blank" rel="noopener" class="tm-btn tm-btn-success tm-btn-sm text-center py-1 extra-small" style="font-size: 0.75rem;">
+                        <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Secondary Alternative Matches -->
+              <div class="row g-2 mb-2">
+                <div class="col-sm-6">
+                  <div class="card rounded-3 border p-2 bg-light h-100">
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="assets/images/hearing-aid/iic.webp" alt="Signia Silk Charge&Go" style="width: 38px; height: 38px; object-fit: contain;">
+                      <div class="flex-grow-1">
+                        <span class="badge bg-light text-navy border extra-small" style="font-size: 0.62rem;">94% Match</span>
+                        <h6 class="fw-bold text-navy mb-0 extra-small mt-0">Signia Silk IX</h6>
+                        <span class="text-muted extra-small" style="font-size: 0.68rem;">From ₹68,000 &bull; Invisible</span>
+                      </div>
+                      <a href="<?= e(url('book-appointment.php')) ?>" class="text-orange fw-bold extra-small text-decoration-none">Trial &rarr;</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="card rounded-3 border p-2 bg-light h-100">
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="assets/images/hearing-aid/bte.webp" alt="Oticon Intent" style="width: 38px; height: 38px; object-fit: contain;">
+                      <div class="flex-grow-1">
+                        <span class="badge bg-light text-navy border extra-small" style="font-size: 0.62rem;">92% Match</span>
+                        <h6 class="fw-bold text-navy mb-0 extra-small mt-0">Oticon Intent</h6>
+                        <span class="text-muted extra-small" style="font-size: 0.68rem;">From ₹92,000 &bull; 4D Sensor</span>
+                      </div>
+                      <a href="<?= e(url('book-appointment.php')) ?>" class="text-orange fw-bold extra-small text-decoration-none">Trial &rarr;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Retake & Consultation Footer -->
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 border-top pt-2 mt-auto">
+                <button type="button" class="btn btn-outline-secondary btn-sm py-0 px-2 extra-small" onclick="goToFinderStep(1)" style="font-size: 0.72rem;">
+                  <i class="bi bi-arrow-counterclockwise me-1"></i> Retake
+                </button>
+                <div class="extra-small text-muted" style="font-size: 0.72rem;">
+                  <i class="bi bi-info-circle text-primary me-1"></i> Doctor Help: <strong class="text-navy"><?= e(SITE_PHONE) ?></strong>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT PART: FULLY VISIBLE HIGH-RES POSTER BANNER -->
+        <div class="col-lg-5 col-xl-5 d-flex">
+          <div class="tm-finder-poster-wrap w-100 d-flex align-items-center justify-content-center bg-white p-2 p-md-3">
+            <img src="assets/images/banners/personalized-hearing.png" 
+                 alt="Not Sure Which Hearing Aid Is Right For You? — Personalized Hearing Aid Finder" 
+                 class="tm-finder-poster-img rounded-3 shadow-xs" 
+                 loading="lazy">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- JavaScript for Interactive Hearing Aid Finder -->
+  <script>
+    const finderChoices = {
+      hearing: 'mild',
+      lifestyle: 'active',
+      preference: 'invisible',
+      budget: 'advanced'
+    };
+
+    function selectFinderOption(step, element, value) {
+      const parentPane = document.getElementById('finderStepPane' + step);
+      if (parentPane) {
+        parentPane.querySelectorAll('.tm-quiz-option-card').forEach(function(card) {
+          card.classList.remove('selected');
+        });
+      }
+      if (element) {
+        element.classList.add('selected');
+      }
+
+      if (step === 1) finderChoices.hearing = value;
+      if (step === 2) finderChoices.lifestyle = value;
+      if (step === 3) finderChoices.preference = value;
+      if (step === 4) finderChoices.budget = value;
+    }
+
+    function goToFinderStep(stepNum) {
+      stepNum = parseInt(stepNum, 10);
+      if (isNaN(stepNum) || stepNum < 1 || stepNum > 5) stepNum = 1;
+
+      // Hide all panes & update stepper nodes
+      for (let i = 1; i <= 5; i++) {
+        const pane = document.getElementById('finderStepPane' + i);
+        const node = document.getElementById('tmStepNode' + i);
+        if (pane) {
+          pane.classList.remove('active');
+        }
+        if (node) {
+          node.classList.remove('active');
+          if (i < stepNum) {
+            node.classList.add('completed');
+          } else {
+            node.classList.remove('completed');
+          }
+        }
+      }
+
+      // Show targeted pane
+      const targetPane = document.getElementById('finderStepPane' + stepNum);
+      const targetNode = document.getElementById('tmStepNode' + stepNum);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+      if (targetNode) {
+        targetNode.classList.add('active');
+      }
+
+      // Update progress bar
+      const progressPercent = (stepNum / 5) * 100;
+      const progBar = document.getElementById('tmFinderProgressBar');
+      if (progBar) {
+        progBar.style.width = progressPercent + '%';
+      }
+
+      // If at step 5, compute recommendations
+      if (stepNum === 5) {
+        renderFinderResultsData();
+      }
+    }
+
+    function generateFinderResults() {
+      goToFinderStep(5);
+    }
+
+    function renderFinderResultsData() {
+      const titleElem = document.getElementById('resPrimaryTitle');
+      const descElem = document.getElementById('resPrimaryDesc');
+      const priceElem = document.getElementById('resPrimaryPrice');
+      const brandElem = document.getElementById('resPrimaryBrandTag');
+      const imgElem = document.getElementById('resPrimaryImg');
+      const waElem = document.getElementById('resPrimaryWaBtn');
+
+      let recTitle = 'Phonak Audéo Infinio Ultra 90';
+      let recDesc = 'Powered by the DEEPSONIC™ real-time neural chip with AutoSense OS 6.0. Instant speech clarity with universal Bluetooth.';
+      let recPrice = '₹85,000';
+      let recBrand = '🇨🇭 Phonak • Switzerland';
+      let recImg = 'assets/images/hearing-aid/ric.webp';
+
+      if (finderChoices.preference === 'invisible' || finderChoices.hearing === 'mild') {
+        recTitle = 'Signia Silk Charge&Go IX';
+        recDesc = '100% Invisible in-the-canal with Binaural OneMic directionality and instant-fit silicone click sleeves.';
+        recPrice = '₹68,000';
+        recBrand = '🇩🇪 Signia • Germany';
+        recImg = 'assets/images/hearing-aid/iic.webp';
+      } else if (finderChoices.lifestyle === 'senior' || finderChoices.preference === 'rechargeable') {
+        recTitle = 'Oticon Intent 1 (BrainHearing™)';
+        recDesc = 'Uses 4D Sensor technology to adapt seamlessly to your body movement and listening intentions with magnetic charging.';
+        recPrice = '₹92,000';
+        recBrand = '🇩🇰 Oticon • Denmark';
+        recImg = 'assets/images/hearing-aid/ric.webp';
+      } else if (finderChoices.budget === 'economy') {
+        recTitle = 'ReSound Key 3 / 4 Digital';
+        recDesc = 'Essential natural sound quality and direct audio streaming from Apple and Android devices with robust moisture protection.';
+        recPrice = '₹32,500';
+        recBrand = '🇩🇰 ReSound • Denmark';
+        recImg = 'assets/images/hearing-aid/ric.webp';
+      }
+
+      if (titleElem) titleElem.innerText = recTitle;
+      if (descElem) descElem.innerText = recDesc;
+      if (priceElem) priceElem.innerHTML = recPrice;
+      if (brandElem) brandElem.innerText = recBrand;
+      if (imgElem) imgElem.src = recImg;
+
+      if (waElem) {
+        const msg = encodeURIComponent(`Hi Turtle Maarks Clinic, I completed your Hearing Aid Finder quiz (Hearing: ${finderChoices.hearing}, Lifestyle: ${finderChoices.lifestyle}, Style: ${finderChoices.preference}, Budget: ${finderChoices.budget}) and matched with ${recTitle}. Please help me book a free trial.`);
+        waElem.href = `https://wa.me/<?= e(SITE_WHATSAPP) ?>?text=${msg}`;
+      }
+    }
+  </script>
 
   <!-- 5. SOUND-BOOTH DIAGNOSTIC HEARING SERVICES -->
   <section class="py-5 bg-light">

@@ -29,7 +29,7 @@ define('SITE_PHONE',        '+91 8130495476');
 define('SITE_PHONE_RAW',    '+918130495476');
 define('SITE_WHATSAPP',     '918130495476');
 define('SITE_EMAIL',        'turtlemaarks@gmail.com');
-define('SITE_ADDRESS',      'Gaur City, Greater Noida West, UP-201306');
+define('SITE_ADDRESS',      '15th Floor, Gaur City Mall, 1509, Greater Noida W Rd, Gaur City 1, Sector IV, Sector 4, Noida, Ghaziabad, Uttar Pradesh 201306');
 define('SITE_HOURS_SHORT',  'Mon-Sat: 10AM-7:30PM');
 define('SITE_HOURS_DAYS',   'Monday &ndash; Saturday');
 define('SITE_HOURS_TIME',   '10:00 AM &ndash; 7:30 PM');

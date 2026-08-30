@@ -8,10 +8,18 @@ $active_nav       = 'products';
 include __DIR__ . '/includes/header.php';
 ?>
 
-<section class="py-4 bg-navy text-white text-center position-relative">
+  <!-- HERO BANNER -->
+  <section class="tm-page-hero text-center position-relative">
     <div class="container">
-      <h1 class="h3 fw-bold text-white mb-1">My Saved Wishlist</h1>
-      <p class="text-white-50 small mb-0">Your bookmarked hearing aids and diagnostic services.</p>
+      <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
+        <div class="tm-breadcrumb-pill">
+          <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <span class="tm-breadcrumb-current" aria-current="page">Saved Wishlist</span>
+        </div>
+      </nav>
+      <h1 class="display-6 fw-bold text-white mb-2 font-heading">My Saved Wishlist</h1>
+      <p class="text-white-50 mx-auto small mb-0" style="max-width: 580px;">Your bookmarked hearing aids and diagnostic clinical services.</p>
     </div>
   </section>
 

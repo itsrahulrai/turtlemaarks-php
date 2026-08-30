@@ -64,42 +64,33 @@ $share_text  = urlencode($blog['title'] . ' - ' . $current_url);
 include __DIR__ . '/includes/header.php';
 ?>
 
-  <!-- BREADCRUMB STRIP -->
-  <div class="py-2 bg-white border-bottom small">
-    <div class="container">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb mb-0">
-          <li class="breadcrumb-item"><a href="<?= e(url('index.php')) ?>" class="text-decoration-none text-muted">Home</a></li>
-          <li class="breadcrumb-item"><a href="<?= e(url('blogs.php')) ?>" class="text-decoration-none text-muted">Blogs</a></li>
-          <li class="breadcrumb-item"><a href="<?= e(url('blogs.php?category=' . urlencode($blog['category']))) ?>" class="text-decoration-none text-muted"><?= e($blog['category']) ?></a></li>
-          <li class="breadcrumb-item active text-navy fw-bold text-truncate" style="max-width: 280px;" aria-current="page"><?= e($blog['title']) ?></li>
-        </ol>
-      </nav>
-    </div>
-  </div>
-
   <!-- ARTICLE HEADER HERO -->
-  <section class="py-4 py-lg-5 bg-navy text-white position-relative">
+  <section class="tm-page-hero text-white position-relative">
     <div class="container">
       <div class="row">
         <div class="col-lg-9 mx-auto text-center">
-          <div class="d-flex flex-wrap align-items-center justify-content-center gap-2 mb-3">
-            <span class="badge <?= e($blog['badge_class']) ?> rounded-pill px-3 py-2 small fw-bold">
-              <i class="bi bi-tag-fill me-1"></i> <?= e($blog['category']) ?>
-            </span>
-            <span class="badge bg-white-10 text-white-50 rounded-pill px-3 py-2 small">
-              <i class="bi bi-clock me-1"></i> <?= e($blog['read_time']) ?>
-            </span>
-          </div>
+          <!-- Unified Frosted Breadcrumb Pill -->
+          <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
+            <div class="tm-breadcrumb-pill">
+              <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
+              <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+              <a href="<?= e(url('blogs.php')) ?>">Blogs</a>
+              <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+              <span class="tm-breadcrumb-current" aria-current="page"><?= e($blog['category']) ?></span>
+            </div>
+          </nav>
 
-          <h1 class="display-6 fw-bold text-white mb-3 lh-sm"><?= e($blog['title']) ?></h1>
+          <h1 class="display-6 fw-bold text-white mb-3 lh-sm font-heading"><?= e($blog['title']) ?></h1>
 
           <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 text-white-50 small">
+            <span class="badge <?= e($blog['badge_class']) ?> rounded-pill px-3 py-1 fw-bold">
+              <i class="bi bi-tag-fill me-1"></i> <?= e($blog['category']) ?>
+            </span>
             <div><i class="bi bi-calendar3 text-orange me-1"></i> <?= e($blog['date']) ?></div>
             <span class="text-white-20">•</span>
-            <div><i class="bi bi-person-check-fill text-success me-1"></i> <?= e($blog['author']) ?> <span class="text-white-50">(<?= e($blog['author_role']) ?>)</span></div>
+            <div><i class="bi bi-clock me-1"></i> <?= e($blog['read_time']) ?></div>
             <span class="text-white-20">•</span>
-            <div><i class="bi bi-shield-check text-info me-1"></i> Medically Verified</div>
+            <div><i class="bi bi-person-check-fill text-success me-1"></i> <?= e($blog['author']) ?></div>
           </div>
         </div>
       </div>

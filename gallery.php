@@ -121,13 +121,14 @@ $gallery_items = [
 <!-- =========================================================================
      HERO & OVERVIEW
      ========================================================================= -->
-<section class="py-4 py-md-5 bg-navy text-white text-center position-relative">
-  <div class="container position-relative py-2">
-    <nav aria-label="breadcrumb" class="mb-2">
-      <ol class="breadcrumb justify-content-center mb-0 small">
-        <li class="breadcrumb-item"><a href="<?= e(url('index.php')) ?>" class="text-white-50 text-decoration-none">Home</a></li>
-        <li class="breadcrumb-item active text-white fw-semibold" aria-current="page">Gallery</li>
-      </ol>
+<section class="tm-page-hero text-center position-relative">
+  <div class="container position-relative">
+    <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
+      <div class="tm-breadcrumb-pill">
+        <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
+        <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+        <span class="tm-breadcrumb-current" aria-current="page">Clinic Tour</span>
+      </div>
     </nav>
 
     <h1 class="display-6 fw-bold text-white mb-2 font-heading">Clinic &amp; Facilities Gallery</h1>

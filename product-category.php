@@ -8,11 +8,20 @@ $active_nav       = 'products';
 include __DIR__ . '/includes/header.php';
 ?>
 
-<section class="py-4 bg-navy text-white text-center position-relative">
-    <div class="container py-2">
-      <span class="tm-pill tm-pill-orange mb-2"><i class="bi bi-battery-charging"></i> Lithium-Ion Fast Charging</span>
-      <h1 class="h3 fw-bold text-white mb-1">Rechargeable Hearing Aids</h1>
-      <p class="text-white-50 small mb-0">Never change batteries again. Enjoy 24 to 30 hours of continuous speech clarity per 3-hour charge.</p>
+  <!-- HERO BANNER -->
+  <section class="tm-page-hero text-center position-relative">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
+        <div class="tm-breadcrumb-pill">
+          <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <a href="<?= e(url('products.php')) ?>">Hearing Aids</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <span class="tm-breadcrumb-current" aria-current="page">Rechargeable</span>
+        </div>
+      </nav>
+      <h1 class="display-6 fw-bold text-white mb-2 font-heading">Rechargeable Hearing Aids</h1>
+      <p class="text-white-50 mx-auto small mb-0" style="max-width: 580px;">Never change batteries again. Enjoy 24 to 30 hours of continuous speech clarity per 3-hour charge.</p>
     </div>
   </section>
 

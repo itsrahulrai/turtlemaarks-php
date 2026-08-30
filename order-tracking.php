@@ -8,7 +8,22 @@ $active_nav       = '';
 include __DIR__ . '/includes/header.php';
 ?>
 
-<section class="py-5 bg-light">
+  <!-- HERO BANNER -->
+  <section class="tm-page-hero text-center position-relative">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
+        <div class="tm-breadcrumb-pill">
+          <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
+          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
+          <span class="tm-breadcrumb-current" aria-current="page">Order Tracking</span>
+        </div>
+      </nav>
+      <h1 class="display-6 fw-bold text-white mb-2 font-heading">Order &amp; Calibration Tracking</h1>
+      <p class="text-white-50 mx-auto small mb-0" style="max-width: 580px;">Real-time fulfillment, lab acoustic calibration, and doorstep delivery updates.</p>
+    </div>
+  </section>
+
+  <section class="py-5 bg-light">
     <div class="container">
       <div class="card rounded-4 border p-4 p-md-5 bg-white shadow-xs mx-auto" style="max-width: 760px;">
         <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
