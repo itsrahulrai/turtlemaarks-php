@@ -58,10 +58,10 @@ $TM_NAV = [
         'label'    => 'Services',
         'url'      => 'services.php',
         'children' => [
-            ['label' => 'PTA (Pure Tone Audiometry)',           'url' => 'diagnostic-services.php#pta'],
-            ['label' => 'Tymp (Tympanometry)',                  'url' => 'diagnostic-services.php#tympanometry'],
-            ['label' => 'BERA (Brain Evoked Response Audiometry)', 'url' => 'diagnostic-services.php#bera'],
-            ['label' => 'OAE (Oto Acoustic Emission)',          'url' => 'diagnostic-services.php#oae'],
+            ['label' => 'PTA (Pure Tone Audiometry)',           'url' => 'pta-pure-tone-audiometry.php'],
+            ['label' => 'Tymp (Tympanometry)',                  'url' => 'tymp-tympanometry.php'],
+            ['label' => 'BERA (Brain Evoked Response Audiometry)', 'url' => 'bera-brain-evoked-response-audiometry.php'],
+            ['label' => 'OAE (Oto Acoustic Emission)',          'url' => 'oae-oto-acoustic-emission.php'],
             ['divider' => true],
             ['label' => 'All Clinical Services', 'url' => 'services.php', 'icon' => 'bi-grid'],
             ['label' => 'View All Diagnostic Tests', 'url' => 'diagnostic-services.php', 'icon' => 'bi-arrow-right-circle', 'highlight' => true],
@@ -95,10 +95,10 @@ $TM_FOOTER_PRODUCTS = [
 ];
 
 $TM_FOOTER_SERVICES = [
-    ['label' => 'Pure Tone Audiometry (PTA)', 'url' => 'diagnostic-services.php#pta'],
-    ['label' => 'Tympanometry (Tymp)',        'url' => 'diagnostic-services.php#tympanometry'],
-    ['label' => 'BERA / ABR Diagnostic Test', 'url' => 'diagnostic-services.php#bera'],
-    ['label' => 'OAE Newborn Screening',      'url' => 'diagnostic-services.php#oae'],
+    ['label' => 'Pure Tone Audiometry (PTA)', 'url' => 'pta-pure-tone-audiometry.php'],
+    ['label' => 'Tympanometry (Tymp)',        'url' => 'tymp-tympanometry.php'],
+    ['label' => 'BERA / ABR Diagnostic Test', 'url' => 'bera-brain-evoked-response-audiometry.php'],
+    ['label' => 'OAE Newborn Screening',      'url' => 'oae-oto-acoustic-emission.php'],
     ['label' => 'Speech & Language Therapy',  'url' => 'service-speech-therapy.php'],
     ['label' => 'Senior Citizen Home Visit',  'url' => 'service-home-visit.php', 'badge' => 'Doorstep'],
     ['label' => 'Free 7-Day Hearing Trial',   'url' => 'service-hearing-aid-trial.php', 'badge' => 'Free'],
@@ -108,7 +108,6 @@ $TM_FOOTER_SUPPORT = [
     ['label' => 'Track Your Order / Booking', 'url' => 'order-tracking.php', 'icon' => 'bi-geo'],
     ['label' => 'Book Clinic Appointment',    'url' => 'book-appointment.php', 'icon' => 'bi-calendar-check'],
     ['label' => 'Hearing Aid Repair & Care',  'url' => 'repair.php', 'icon' => 'bi-tools'],
-    ['label' => 'Compare Hearing Devices',    'url' => 'compare.php', 'icon' => 'bi-arrow-left-right'],
     ['label' => 'My Cart & Wishlist',         'url' => 'cart.php', 'icon' => 'bi-bag'],
     ['label' => 'Clinic Gallery & Tour',       'url' => 'gallery.php', 'icon' => 'bi-images'],
     ['label' => 'Find Clinic on Google Maps', 'url' => 'contact.php#map', 'icon' => 'bi-map'],
@@ -146,7 +145,6 @@ $TM_CORE_JS = [
     'assets/js/products.js',
     'assets/js/cart.js',
     'assets/js/wishlist.js',
-    'assets/js/compare.js',
 ];
 
 require_once __DIR__ . '/functions.php';

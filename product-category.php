@@ -15,7 +15,7 @@ include __DIR__ . '/includes/header.php';
         <div class="tm-breadcrumb-pill">
           <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
           <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
-          <a href="<?= e(url('products.php')) ?>">Hearing Aids</a>
+          <a href="<?= e(url('products.php')) ?>">Products</a>
           <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
           <span class="tm-breadcrumb-current" aria-current="page">Rechargeable</span>
         </div>

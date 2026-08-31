@@ -331,7 +331,7 @@ include __DIR__ . '/includes/header.php';
 
             <!-- RIGHT: LIVE BOOKING SUMMARY PREVIEW (Col-lg-4) -->
             <div class="col-lg-4">
-              <div class="tm-booking-summary-pane">
+              <div class="tm-booking-summary-pane tm-booking-summary-sidebar">
                 <div class="d-flex align-items-center gap-2 mb-3">
                   <i class="bi bi-clipboard2-check text-orange fs-5"></i>
                   <h6 class="fw-bold text-navy mb-0">Live Booking Summary</h6>

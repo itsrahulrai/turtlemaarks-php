@@ -1335,6 +1335,7 @@ const TurtleProducts = {
     if (!p) return '';
 
     const colClass = options.colClass || 'col-xl-3 col-lg-4 col-md-6';
+    const isWishlistPage = !!options.isWishlistPage || !!options.isWishlist;
     const savings = Math.max(0, (p.mrp || p.price) - p.price);
     const savePercent = p.mrp > p.price ? Math.round(((p.mrp - p.price) / p.mrp) * 100) : 0;
     const badgeText = p.badge || (savePercent > 0 ? `${savePercent}% OFF` : 'Authorized');
@@ -1366,16 +1367,9 @@ const TurtleProducts = {
                 aria-label="Wishlist">
                 <i class="bi ${isWishlisted ? 'bi-heart-fill text-danger' : 'bi-heart'}"></i>
               </button>
-
-              <button type="button" class="tm-product-action-btn" 
-                onclick="Compare.toggle({id:'${p.id}', name:'${safeName}', brand:'${safeBrand}', price:${p.price}, image:'${safeImage}', style:'${p.style || 'Digital'}', channels:'${p.channels || 0} Channels'})" 
-                title="Compare Specifications"
-                aria-label="Compare">
-                <i class="bi bi-arrow-left-right"></i>
-              </button>
             </div>
 
-            <a href="product-detail.php?id=${p.id}" class="tm-product-img-wrap d-block">
+            <a href="product-detail.php?id=${p.id}" class="tm-product-img-wrap d-flex align-items-center justify-content-center">
               <img src="${safeImage}" alt="${p.name}" class="tm-product-img" loading="lazy">
             </a>
           </div>
@@ -1414,6 +1408,16 @@ const TurtleProducts = {
                 <i class="bi bi-cart-plus-fill"></i> Add to Cart
               </button>
             </div>
+
+            ${isWishlistPage ? `
+            <!-- Dedicated Remove Button on Wishlist Page -->
+            <div class="tm-product-wishlist-actions mt-2 pt-2 border-top">
+              <button type="button" class="tm-btn tm-btn-sm tm-btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-1"
+                onclick="Wishlist.toggle({id:'${p.id}', name:'${safeName}'})" title="Remove product from Wishlist">
+                <i class="bi bi-trash3"></i> Remove from Wishlist
+              </button>
+            </div>
+            ` : ''}
 
           </div>
 

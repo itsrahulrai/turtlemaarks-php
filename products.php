@@ -2,8 +2,8 @@
 /**
  * Digital Hearing Aids Catalog — Turtle Maarks Hearing Health
  */
-$page_title       = 'Digital Hearing Aids Catalog — Turtle Maarks Hearing Health';
-$page_description = 'Explore digital hearing aids from Phonak, Oticon, ReSound, Signia, Starkey, Widex. Filter by brand, style (RIC, CIC, BTE), and price in Noida Extension.';
+$page_title       = 'Products — Turtle Maarks Hearing Health';
+$page_description = 'Explore 50+ world-class digital hearing solutions from Phonak, Oticon, ReSound, Signia, Starkey, Widex with official warranty and lifetime expert care in Noida Extension.';
 $active_nav       = 'products';
 $page_js          = ['assets/js/filter.js'];
 
@@ -47,11 +47,11 @@ include __DIR__ . '/includes/header.php';
         <div class="tm-breadcrumb-pill">
           <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
           <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
-          <span class="tm-breadcrumb-current" aria-current="page">Hearing Aids</span>
+          <span class="tm-breadcrumb-current" aria-current="page">Products</span>
         </div>
       </nav>
-      <h1 class="display-6 fw-bold text-white mb-2 font-heading">Digital Hearing Aids</h1>
-      <p class="text-white-50 mx-auto small mb-0" style="max-width: 620px;">Compare 50+ models with official warranty, 7-day free trial, and lifetime acoustic fine-tuning.</p>
+      <h1 class="display-6 fw-bold text-white mb-2 font-heading">Products</h1>
+      <p class="text-white-50 mx-auto small mb-0" style="max-width: 650px;">Explore 50+ world-class digital hearing solutions with official brand warranty, precision clinical fitting, and lifetime expert care.</p>
     </div>
   </section>
 
@@ -60,15 +60,15 @@ include __DIR__ . '/includes/header.php';
     <div class="container">
       <div class="row g-4">
         
-        <!-- Filter Sidebar — slides in as an offcanvas below lg, static column above -->
-        <div class="col-lg-3">
+        <!-- Filter Sidebar — slides in as an offcanvas below lg, sticky column above -->
+        <div class="col-lg-3 tm-filter-sidebar-col">
           <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="tmFilterPanel" aria-labelledby="tmFilterPanelLabel">
             <div class="offcanvas-header border-bottom">
               <h6 class="offcanvas-title fw-bold text-navy mb-0" id="tmFilterPanelLabel">Filter Hearing Aids</h6>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tmFilterPanel" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body p-3 p-lg-0">
-          <div class="card rounded-4 border p-4 bg-white shadow-xs sticky-lg-top w-100" style="top: 85px;">
+              <div class="card rounded-4 border p-4 bg-white shadow-xs tm-filter-sticky-card w-100">
             <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
               <h6 class="fw-bold text-navy mb-0"><i class="bi bi-funnel text-orange me-1"></i> Filter By</h6>
               <button class="btn btn-sm btn-link text-orange p-0 small" id="tmClearFiltersBtn">Reset All</button>
@@ -209,14 +209,14 @@ include __DIR__ . '/includes/header.php';
               </div>
             </div>
           </div>
-            </div>
-          </div>
         </div>
+      </div>
+    </div>
 
         <!-- Products Grid (Right) -->
         <div class="col-lg-9">
           <!-- Filter Controls Bar -->
-          <div class="card rounded-3 border p-3 bg-white mb-3 shadow-xs d-flex flex-column flex-sm-row gap-2 justify-content-between align-items-sm-center">
+          <div class="card rounded-3 border p-3 bg-white mb-3 shadow-xs d-flex flex-column flex-sm-row gap-2 justify-content-between align-items-sm-center tm-filter-controls-bar">
             <div class="d-flex align-items-center gap-2">
               <button class="tm-btn tm-btn-outline-navy btn-sm d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tmFilterPanel" aria-controls="tmFilterPanel">
                 <i class="bi bi-funnel"></i> Filters

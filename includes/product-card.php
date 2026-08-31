@@ -21,13 +21,9 @@ $image      = !empty($p['image']) ? $p['image'] : 'assets/images/hearing-aid/ric
 $detailUrl  = url('product-detail.php?id=' . urlencode($p['id']));
 $trialUrl   = url('book-appointment.php?model=' . urlencode($p['name']));
 
-/* payloads for the JS cart / wishlist / compare controllers */
+/* payloads for the JS cart / wishlist controllers */
 $jsItem = "{id:'" . js_str($p['id']) . "', name:'" . js_str($p['name']) . "', brand:'" . js_str($p['brand'] ?? SITE_SHORT)
         . "', price:" . (int) $price . ", mrp:" . (int) $mrp . ", image:'" . js_str($image) . "'}";
-
-$jsCompare = "{id:'" . js_str($p['id']) . "', name:'" . js_str($p['name']) . "', brand:'" . js_str($p['brand'] ?? SITE_SHORT)
-        . "', price:" . (int) $price . ", image:'" . js_str($image) . "', style:'" . js_str($p['style'] ?? 'Digital')
-        . "', channels:'" . js_str(($p['channels'] ?? 0) . ' Channels') . "'}";
 ?>
 <?php if ($wrap): ?><div class="<?= e($col) ?>"><?php endif; ?>
   <div class="tm-product-card" data-product-id="<?= e($p['id']) ?>">
@@ -43,15 +39,9 @@ $jsCompare = "{id:'" . js_str($p['id']) . "', name:'" . js_str($p['name']) . "',
                 title="Add to Wishlist" aria-label="Wishlist">
           <i class="bi bi-heart"></i>
         </button>
-
-        <button type="button" class="tm-product-action-btn"
-                onclick="Compare.toggle(<?= $jsCompare ?>)"
-                title="Compare Specifications" aria-label="Compare">
-          <i class="bi bi-arrow-left-right"></i>
-        </button>
       </div>
 
-      <a href="<?= e($detailUrl) ?>" class="tm-product-img-wrap d-block">
+      <a href="<?= e($detailUrl) ?>" class="tm-product-img-wrap d-flex align-items-center justify-content-center">
         <img src="<?= e(url($image)) ?>" alt="<?= e($p['name']) ?>" class="tm-product-img" loading="lazy">
       </a>
     </div>
@@ -103,6 +93,15 @@ $jsCompare = "{id:'" . js_str($p['id']) . "', name:'" . js_str($p['name']) . "',
           <i class="bi bi-cart-plus-fill"></i> Add to Cart
         </button>
       </div>
+
+      <?php if (!empty($options['isWishlistPage'])): ?>
+        <div class="tm-product-wishlist-actions mt-2 pt-2 border-top">
+          <button type="button" class="tm-btn tm-btn-sm tm-btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-1"
+                  onclick="Wishlist.toggle(<?= $jsItem ?>)" title="Remove product from Wishlist">
+            <i class="bi bi-trash3"></i> Remove from Wishlist
+          </button>
+        </div>
+      <?php endif; ?>
 
     </div>
   </div>

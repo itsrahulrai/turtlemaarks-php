@@ -1,42 +1,31 @@
 <?php
 /**
- * HD Video Otoscopy Ear Canal & Eardrum Examination — Turtle Maarks
+ * BERA (Brain Evoked Response Audiometry) — Turtle Maarks Hearing Health
  */
-$page_title       = 'HD Video Otoscopy Ear Canal & Eardrum Examination — Turtle Maarks';
-$page_description = 'High-definition 1080p fiberoptic ear canal and tympanic membrane examination in Greater Noida West with live patient display screen.';
+$page_title       = 'BERA (Brain Evoked Response Audiometry) — Turtle Maarks Hearing Health';
+$page_description = 'Brain Evoked Response Audiometry (BERA / ABR) electrophysiological hearing test in Greater Noida West. Objective infant and neurological hearing thresholds.';
 $active_nav       = 'services';
 include __DIR__ . '/includes/header.php';
 ?>
 
-  <!-- SERVICE HERO -->
-  <section class="tm-service-hero">
+  <!-- HERO BANNER -->
+  <section class="tm-page-hero text-center position-relative">
     <div class="container">
-      <!-- Unified Frosted Breadcrumb Pill -->
       <nav aria-label="breadcrumb" class="d-inline-flex mb-2">
         <div class="tm-breadcrumb-pill">
           <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
           <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
           <a href="<?= e(url('services.php')) ?>">Services</a>
           <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
-          <span class="tm-breadcrumb-current" aria-current="page">Video Otoscopy</span>
+          <span class="tm-breadcrumb-current" aria-current="page">BERA (Brain Evoked Response)</span>
         </div>
       </nav>
-
-      <div class="row align-items-center g-4">
-        <div class="col-lg-8">
-          <h1 class="display-6 fw-bold text-white mb-2 font-heading">HD Video Otoscopy Ear Canal &amp; Eardrum Exam</h1>
-          <p class="text-white-50 mb-3" style="max-width: 680px;">See inside your own ear canal in real time. Our high-resolution medical fiberoptic otoscope inspects for impacted earwax, fungal infection, moisture, eardrum redness, and perforations.</p>
-          <div class="d-flex flex-wrap gap-3 text-white-50 small">
-            <div><i class="bi bi-clock-fill text-orange"></i> <strong>Duration:</strong> 15 Mins Quick Exam</div>
-            <div><i class="bi bi-tag-fill text-orange"></i> <strong>Fee:</strong> ₹500 (Free with Hearing Aid Trials)</div>
-            <div><i class="bi bi-display text-orange"></i> <strong>Output:</strong> 1080p Live Screen + Digital Report</div>
-          </div>
-        </div>
-      </div>
+      <h1 class="display-6 fw-bold text-white mb-2 font-heading">BERA (Brain Evoked Response Audiometry)</h1>
+      <p class="text-white-50 mx-auto small mb-0" style="max-width: 680px;">An objective electrophysiological diagnostic test evaluating auditory nerve transmission and brainstem pathway integrity in newborns, infants, and non-verbal adults.</p>
     </div>
   </section>
 
-  <!-- MAIN SERVICE CONTENT & BOOKING SIDEBAR -->
+  <!-- MAIN SERVICE CONTENT & SIDEBAR -->
   <section class="py-5 bg-light">
     <div class="container">
       <div class="row g-4 tm-service-layout-row">
@@ -44,72 +33,83 @@ include __DIR__ . '/includes/header.php';
         <!-- Left: Clinical Content -->
         <div class="col-lg-8 tm-service-main-col">
           
-          <div class="card rounded-4 border p-4 bg-white shadow-xs mb-4">
-            <h4 class="fw-bold text-navy mb-3">Live Visual Ear Canal Transparency</h4>
-            <p class="text-secondary">Traditional handheld otoscopes only allow the doctor to look inside your ear. At <strong>Turtle Maarks Hearing Health</strong>, our video otoscope features an ultra-slim medical fiberoptic camera that transmits a live 1080p high-definition image to a large monitor right in front of you.</p>
-            <p class="text-secondary mb-0">You and your family can clearly see the ear canal walls, whether wax is obstructing sound transmission, and verify that the tympanic membrane (eardrum) is intact and healthy.</p>
+          <!-- Featured Image Card -->
+          <div class="card rounded-4 border overflow-hidden bg-white shadow-xs mb-4">
+            <div style="aspect-ratio: 16/9; background: #F8FAFC; overflow: hidden;">
+              <img src="<?= e(url('assets/images/services/bera.webp')) ?>" alt="BERA Brainstem Evoked Response Audiometry Test" class="w-100 h-100 object-fit-cover">
+            </div>
+            <div class="p-3 bg-white border-top d-flex justify-content-between align-items-center flex-wrap gap-2">
+              <div class="d-flex align-items-center gap-3">
+                <span class="badge bg-light text-navy border px-3 py-2 small fw-bold"><i class="bi bi-clock text-orange me-1"></i> 45 Mins Duration</span>
+                <span class="badge bg-light text-navy border px-3 py-2 small fw-bold"><i class="bi bi-cpu text-info me-1"></i> Brainstem Electrophysiology</span>
+              </div>
+            </div>
           </div>
 
-          <!-- 3-Step Process -->
-          <div class="card rounded-4 border p-4 bg-white shadow-xs mb-4">
-            <h4 class="fw-bold text-navy mb-4">The 15-Minute Exam Experience</h4>
+          <!-- Overview Card -->
+          <div class="card rounded-4 border p-4 p-md-5 bg-white shadow-xs mb-4">
+            <h3 class="fw-bold text-navy mb-3 font-heading">What is BERA (Brain Evoked Response Audiometry)?</h3>
+            <p class="text-secondary" style="font-size: 1.025rem; line-height: 1.7;">
+              BERA, or Brain Evoked Response Audiometry, is a non-invasive diagnostic test that measures the brain’s electrical activity in response to sound stimuli. It is especially useful in assessing hearing in newborns, young children, and individuals who are unable to respond to conventional hearing tests.
+            </p>
+            <p class="text-secondary" style="font-size: 1.025rem; line-height: 1.7;">
+              By placing small electrodes on the scalp, the test records how sound signals travel along the auditory nerve to the brainstem. BERA helps detect hearing loss, neurological issues, and auditory pathway disorders with precision. It is safe, painless, and plays a crucial role in early hearing detection and intervention.
+            </p>
+            <p class="text-secondary mb-0" style="font-size: 1.025rem; line-height: 1.7;">
+              BERA, or Brain Evoked Response Audiometry, is an advanced, objective hearing test that evaluates how sound signals travel from the ear through the auditory nerve to the brainstem. This test is especially beneficial for individuals who cannot provide reliable behavioral responses to traditional hearing tests — such as newborns, infants, individuals with developmental delays, or unconscious patients.
+            </p>
+          </div>
+
+          <!-- Key Benefits of BERA Testing Card -->
+          <div class="card rounded-4 border p-4 p-md-5 bg-white shadow-xs mb-4">
+            <h4 class="fw-bold text-navy mb-4 font-heading"><i class="bi bi-patch-check-fill text-orange me-2"></i>Key Benefits of BERA Testing</h4>
             
-            <div class="tm-service-process-step">
-              <div class="tm-service-step-num">1</div>
-              <h6 class="fw-bold text-navy mb-1">Sanitized Micro-Speculum Placement</h6>
-              <p class="small text-secondary mb-0">A single-use disposable soft tip is attached to the camera probe to ensure absolute clinical hygiene and zero discomfort.</p>
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex align-items-start gap-3 p-3 rounded-3 bg-light border">
+                <div class="rounded-circle bg-info-subtle text-info d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px;"><i class="bi bi-heart-pulse-fill"></i></div>
+                <div>
+                  <h6 class="fw-bold text-navy mb-1">Early Diagnosis in Infants &amp; Neonates</h6>
+                  <p class="small text-secondary mb-0">It is one of the most effective methods to identify hearing impairment in newborns and babies, allowing for timely clinical and habilitative intervention before critical speech milestones.</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 p-3 rounded-3 bg-light border">
+                <div class="rounded-circle bg-info-subtle text-info d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px;"><i class="bi bi-check2-circle"></i></div>
+                <div>
+                  <h6 class="fw-bold text-navy mb-1">Objective and 100% Reliable</h6>
+                  <p class="small text-secondary mb-0">No active verbal or motor response is required from the patient, making it suitable for infants during natural sleep, sedated patients, or individuals with cognitive impairments.</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 p-3 rounded-3 bg-light border">
+                <div class="rounded-circle bg-info-subtle text-info d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px;"><i class="bi bi-diagram-2-fill"></i></div>
+                <div>
+                  <h6 class="fw-bold text-navy mb-1">Neurological Pathway Insight</h6>
+                  <p class="small text-secondary mb-0">It helps evaluate retrocochlear and neurological pathologies, such as acoustic neuroma (vestibular schwannoma), auditory neuropathy spectrum disorder (ANSD), and brainstem lesions.</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 p-3 rounded-3 bg-light border">
+                <div class="rounded-circle bg-info-subtle text-info d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px;"><i class="bi bi-shield-check"></i></div>
+                <div>
+                  <h6 class="fw-bold text-navy mb-1">Non-Invasive &amp; Completely Painless</h6>
+                  <p class="small text-secondary mb-0">Surface sticker electrodes rest lightly on the forehead and mastoid bones. The procedure is entirely safe, with no radiation, discomfort, or risks involved.</p>
+                </div>
+              </div>
             </div>
 
-            <div class="tm-service-process-step">
-              <div class="tm-service-step-num">2</div>
-              <h6 class="fw-bold text-navy mb-1">Live 1080p Screen Inspection</h6>
-              <p class="small text-secondary mb-0">The doctor guides the probe down the ear canal while you watch on screen. We capture high-res snapshots for your medical records.</p>
+            <div class="alert alert-info border-0 mt-4 mb-0 small">
+              <i class="bi bi-info-circle-fill me-1"></i> At our center, BERA testing is conducted by RCI-certified senior audiologists using computerized multichannel neuro-diagnostic equipment to ensure clinical precision.
             </div>
 
-            <div class="tm-service-process-step">
-              <div class="tm-service-step-num">3</div>
-              <h6 class="fw-bold text-navy mb-1">Clinical Assessment & Next Steps</h6>
-              <p class="small text-secondary mb-0">If impacted wax or foreign body is detected, we advise appropriate microsuction or proceed immediately to audiometric hearing tests.</p>
-            </div>
-          </div>
-
-          <!-- Common Findings -->
-          <div class="card rounded-4 border p-4 bg-white shadow-xs mb-4">
-            <h4 class="fw-bold text-navy mb-3">Conditions Detected on Video Otoscopy</h4>
-            <div class="row row-cols-1 row-cols-md-2 g-3">
-              <div class="col">
-                <div class="p-3 bg-light rounded-3 border h-100">
-                  <h6 class="fw-bold text-navy mb-1"><i class="bi bi-shield-exclamation text-orange me-1"></i> Impacted Cerumen (Earwax)</h6>
-                  <p class="small text-secondary mb-0">Dense wax plugs that can cause temporary 15-30 dB conductive hearing loss and ear fullness.</p>
-                </div>
-              </div>
-              <div class="col">
-                <div class="p-3 bg-light rounded-3 border h-100">
-                  <h6 class="fw-bold text-navy mb-1"><i class="bi bi-bandaid text-orange me-1"></i> Tympanic Perforation (Eardrum Hole)</h6>
-                  <p class="small text-secondary mb-0">Checking eardrum structural integrity before recommending hearing aid receiver types or water exposure.</p>
-                </div>
-              </div>
-              <div class="col">
-                <div class="p-3 bg-light rounded-3 border h-100">
-                  <h6 class="fw-bold text-navy mb-1"><i class="bi bi-droplet text-orange me-1"></i> Otitis Externa & Infection</h6>
-                  <p class="small text-secondary mb-0">Detecting canal swelling, fungus, or bacterial redness for timely ENT referral.</p>
-                </div>
-              </div>
-              <div class="col">
-                <div class="p-3 bg-light rounded-3 border h-100">
-                  <h6 class="fw-bold text-navy mb-1"><i class="bi bi-check2-all text-orange me-1"></i> Hearing Aid Receiver Fit Verification</h6>
-                  <p class="small text-secondary mb-0">Ensuring custom ear moulds or RIC domes seat deeply at the correct acoustic angle without touching sensitive canal bends.</p>
-                </div>
-              </div>
-            </div>
           </div>
 
         </div>
 
-        <!-- Right: Interactive Sticky Booking Card -->
+        <!-- Right: Diagnostic Services Sidebar -->
         <div class="col-lg-4 tm-service-sidebar">
-
-          <!-- Diagnostic Services Navigation Widget -->
+          
+          <!-- 1. Diagnostic Services Navigation Widget -->
           <div class="tm-diag-nav-card">
             <div class="tm-diag-nav-header">
               <h5 class="tm-diag-nav-title">
@@ -144,7 +144,7 @@ include __DIR__ . '/includes/header.php';
               </a>
 
               <!-- BERA -->
-              <a href="<?= e(url('bera-brain-evoked-response-audiometry.php')) ?>" class="tm-diag-nav-item">
+              <a href="<?= e(url('bera-brain-evoked-response-audiometry.php')) ?>" class="tm-diag-nav-item active">
                 <div class="tm-diag-nav-item-left">
                   <div class="tm-diag-nav-icon"><i class="bi bi-cpu"></i></div>
                   <div>
@@ -168,7 +168,7 @@ include __DIR__ . '/includes/header.php';
               </a>
 
               <!-- Video Otoscopy -->
-              <a href="<?= e(url('service-video-otoscopy.php')) ?>" class="tm-diag-nav-item active">
+              <a href="<?= e(url('service-video-otoscopy.php')) ?>" class="tm-diag-nav-item">
                 <div class="tm-diag-nav-item-left">
                   <div class="tm-diag-nav-icon"><i class="bi bi-camera-video"></i></div>
                   <div>
@@ -188,7 +188,7 @@ include __DIR__ . '/includes/header.php';
             </div>
           </div>
 
-          <!-- Book Your Test (Vertical Wizard Card matching Book Your Appointment) -->
+          <!-- 2. Book Your Test (Vertical Wizard Card matching Book Your Appointment) -->
           <div class="tm-vert-booking-card">
             <!-- Header -->
             <div class="bg-navy p-3 px-4 text-white d-flex justify-content-between align-items-center">
@@ -196,11 +196,11 @@ include __DIR__ . '/includes/header.php';
                 <span class="text-white-50 extra-small text-uppercase fw-bold tracking-wider d-block">Quick Booking</span>
                 <h5 class="fw-bold text-white mb-0 font-heading"><i class="bi bi-calendar2-check text-orange me-2"></i>Book Your Test</h5>
               </div>
-              <span class="badge bg-orange text-white fw-bold px-3 py-2 fs-6">₹500</span>
+              <span class="badge bg-orange text-white fw-bold px-3 py-2 fs-6">₹3,500</span>
             </div>
 
             <div class="p-4">
-              <form onsubmit="event.preventDefault(); showToast('Appointment Confirmed!', 'Your HD Video Otoscopy exam has been scheduled.', 'success'); this.reset();">
+              <form onsubmit="event.preventDefault(); showToast('Appointment Confirmed!', 'Your BERA test has been scheduled.', 'success'); this.reset();">
                 
                 <!-- STEP 1: Location -->
                 <div class="mb-3">
@@ -214,7 +214,7 @@ include __DIR__ . '/includes/header.php';
                       <div class="tm-booking-opt-icon"><i class="bi bi-building"></i></div>
                       <div>
                         <div class="fw-bold text-navy small">Clinic Visit (Gaur City)</div>
-                        <span class="text-secondary extra-small">HD Video Monitor &bull; 15th Floor</span>
+                        <span class="text-secondary extra-small">Sound-Treated Booth &bull; Lab Testing</span>
                       </div>
                     </div>
                   </div>
@@ -224,7 +224,7 @@ include __DIR__ . '/includes/header.php';
                       <div class="tm-booking-opt-icon"><i class="bi bi-house-heart-fill"></i></div>
                       <div>
                         <div class="fw-bold text-navy small">Doorstep Home Visit</div>
-                        <span class="text-secondary extra-small">Elderly &bull; Portable Video Otoscope</span>
+                        <span class="text-secondary extra-small">Elderly &bull; Portable Neuro Unit</span>
                       </div>
                     </div>
                   </div>
@@ -251,8 +251,8 @@ include __DIR__ . '/includes/header.php';
                     <div class="d-flex align-items-center gap-2">
                       <div class="tm-booking-opt-icon"><i class="bi bi-person-badge-fill text-primary"></i></div>
                       <div>
-                        <div class="fw-bold text-navy small">Dr. Ritu Verma, MASLP</div>
-                        <span class="text-secondary extra-small">Senior Specialist &bull; 14+ Yrs Exp</span>
+                        <div class="fw-bold text-navy small">Dr. Saurabh Mishra, BASLP</div>
+                        <span class="text-secondary extra-small">Pediatric &amp; Neuro BERA Expert</span>
                       </div>
                     </div>
                   </div>
@@ -268,8 +268,8 @@ include __DIR__ . '/includes/header.php';
                   <div class="tm-slot-grid">
                     <button type="button" class="tm-slot-btn active" onclick="selectSlotSidebar(this)">10:00 AM</button>
                     <button type="button" class="tm-slot-btn" onclick="selectSlotSidebar(this)">11:45 AM</button>
-                    <button type="button" class="tm-slot-btn" onclick="selectSlotSidebar(this)">01:15 PM</button>
-                    <button type="button" class="tm-slot-btn" onclick="selectSlotSidebar(this)">03:45 PM</button>
+                    <button type="button" class="tm-slot-btn" onclick="selectSlotSidebar(this)">01:30 PM</button>
+                    <button type="button" class="tm-slot-btn" onclick="selectSlotSidebar(this)">03:30 PM</button>
                     <button type="button" class="tm-slot-btn" onclick="selectSlotSidebar(this)">05:15 PM</button>
                     <button type="button" class="tm-slot-btn" onclick="selectSlotSidebar(this)">06:45 PM</button>
                   </div>
@@ -279,10 +279,10 @@ include __DIR__ . '/includes/header.php';
                 <div class="mb-3">
                   <div class="d-flex align-items-center gap-2 mb-2">
                     <span class="tm-step-badge-vert">4</span>
-                    <label class="fw-bold text-navy small mb-0">Patient Information</label>
+                    <label class="fw-bold text-navy small mb-0">Patient / Child Details</label>
                   </div>
                   <div class="mb-2">
-                    <input type="text" class="form-control form-control-sm" placeholder="Full Patient Name" required>
+                    <input type="text" class="form-control form-control-sm" placeholder="Full Name (or Child Name)" required>
                   </div>
                   <div>
                     <input type="tel" pattern="[0-9]{10}" class="form-control form-control-sm" placeholder="10-Digit Mobile / WhatsApp" required>
@@ -293,11 +293,11 @@ include __DIR__ . '/includes/header.php';
                 <div class="p-2 px-3 rounded-3 bg-light border small mb-3">
                   <div class="d-flex justify-content-between align-items-center mb-1">
                     <span class="text-muted extra-small">Test:</span>
-                    <span class="fw-bold text-navy extra-small">HD Video Otoscopy</span>
+                    <span class="fw-bold text-navy extra-small">BERA (Brain Evoked Response)</span>
                   </div>
                   <div class="d-flex justify-content-between align-items-center">
                     <span class="text-muted extra-small">Total Fee:</span>
-                    <span class="fw-bold text-navy extra-small">₹500 (Pay at Clinic)</span>
+                    <span class="fw-bold text-navy extra-small">₹3,500 (Pay at Clinic)</span>
                   </div>
                 </div>
 
@@ -311,19 +311,19 @@ include __DIR__ . '/includes/header.php';
             </div>
           </div>
 
-            <div class="card rounded-4 border p-4 bg-navy text-white shadow-xs text-center mt-3 tm-service-assistance-card">
-              <div class="rounded-circle bg-white bg-opacity-10 d-inline-flex align-items-center justify-content-center mx-auto mb-2" style="width: 44px; height: 44px;">
-                <i class="bi bi-headset text-orange fs-5"></i>
-              </div>
-              <h6 class="fw-bold text-white mb-1">Need Clinical Advice?</h6>
-              <p class="text-white-50 small mb-3">Speak with our senior clinical audiologist about your eardrum checkup.</p>
-              <div class="d-grid gap-2">
-                <a href="tel:+918130495476" class="tm-btn tm-btn-primary tm-btn-sm"><i class="bi bi-telephone-fill me-1"></i> Call +91 8130495476</a>
-                <a href="https://wa.me/918130495476" target="_blank" rel="noopener" class="tm-btn tm-btn-whatsapp tm-btn-sm"><i class="bi bi-whatsapp me-1"></i> WhatsApp Consultation</a>
-              </div>
+          <!-- 3. Direct Clinical Assistance Card -->
+          <div class="card rounded-4 border p-4 bg-navy text-white shadow-xs text-center tm-service-assistance-card">
+            <div class="rounded-circle bg-white bg-opacity-10 d-inline-flex align-items-center justify-content-center mx-auto mb-2" style="width: 50px; height: 50px;">
+              <i class="bi bi-headset text-orange fs-4"></i>
             </div>
-
+            <h5 class="fw-bold text-white mb-1">Need Pediatric Consultation?</h5>
+            <p class="text-white-50 small mb-3">Speak with our senior pediatric audiologist about preparing infants for natural sleep BERA.</p>
+            <div class="d-grid gap-2">
+              <a href="tel:+918130495476" class="tm-btn tm-btn-primary tm-btn-sm"><i class="bi bi-telephone-fill me-1"></i> Call +91 8130495476</a>
+              <a href="https://wa.me/918130495476?text=<?= rawurlencode('Hi Turtle Maarks, I would like guidance regarding BERA (Brain Evoked Response Audiometry) testing.') ?>" target="_blank" rel="noopener" class="tm-btn tm-btn-whatsapp tm-btn-sm"><i class="bi bi-whatsapp me-1"></i> WhatsApp Consultation</a>
+            </div>
           </div>
+
         </div>
 
       </div>
@@ -341,10 +341,10 @@ include __DIR__ . '/includes/header.php';
       btn.classList.add('active');
     }
     const today = new Date().toISOString().split('T')[0];
-    const dateInput = document.getElementById('bookingDate');
-    if (dateInput) {
-      dateInput.value = today;
-      dateInput.min = today;
+    const dInput = document.getElementById('bookingDate');
+    if (dInput) {
+      dInput.value = today;
+      dInput.min = today;
     }
   </script>
 

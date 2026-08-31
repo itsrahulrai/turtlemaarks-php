@@ -26,6 +26,16 @@ include __DIR__ . '/includes/header.php';
   <!-- WISHLIST GRID -->
   <section class="py-5 bg-light">
     <div class="container">
+      <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-2 pb-2 border-bottom" id="tmWishlistHeader" style="display: none !important;">
+        <div>
+          <h4 class="fw-bold text-navy mb-0" id="tmWishlistCountHeading">Saved Products</h4>
+          <span class="text-muted small">Manage your saved hearing aids and clinical accessories</span>
+        </div>
+        <button type="button" class="tm-btn tm-btn-outline-danger tm-btn-sm" onclick="Wishlist.clear()">
+          <i class="bi bi-trash3 me-1"></i> Clear Wishlist
+        </button>
+      </div>
+
       <div class="row g-3" id="tmWishlistGrid">
         <!-- Rendered dynamically by wishlist.js -->
       </div>

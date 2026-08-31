@@ -5,394 +5,32 @@
 $page_title       = 'Turtle Maarks Hearing Health — Modern Hearing Aids & Audiology Clinic';
 $page_description = 'Authorized clinic for Phonak, Oticon, ReSound, Signia, Starkey, Widex digital hearing aids & sound-booth diagnostic hearing tests in Greater Noida West & Noida.';
 $active_nav       = 'home';
-$page_js          = ['assets/js/appointment.js'];
 include __DIR__ . '/includes/header.php';
 ?>
 
   <!-- ============ FULL-WIDTH HERO IMAGE BANNER ============ -->
   <section class="tm-hero-image-banner p-0 m-0 w-100">
     <a href="book-appointment.php" class="d-block w-100" title="Book Hearing Health Consultation">
-      <img src="assets/images/banners/b7.png" alt="Turtle Maarks Hearing Health — Authorized Clinic for Phonak, Oticon, ReSound, Signia, Starkey, Widex" class="w-100 d-block tm-hero-banner-img">
+      <picture class="w-100 d-block">
+        <source media="(max-width: 767.98px)" srcset="assets/images/banners/mobile/mob-banner.png">
+        <img src="assets/images/banners/b7.png" alt="Turtle Maarks Hearing Health — Authorized Clinic for Phonak, Oticon, ReSound, Signia, Starkey, Widex" class="w-100 d-block tm-hero-banner-img">
+      </picture>
     </a>
   </section>
-
-    <!-- =========================================================================
-       4-STEP APPOINTMENT BOOKING SECTION (INTERACTIVE SCHEDULER)
-       ========================================================================= -->
-  <section class="py-5 tm-home-booking-section border-top border-bottom" id="bookAppointmentSection">
-    <div class="container">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-700 mx-auto mb-4">
-        <span class="tm-pill tm-pill-orange mb-2"><i class="bi bi-calendar2-check-fill"></i> Instant Doctor Slot Reservation</span>
-        <h2 class="tm-section-title mb-1">Book Your <span>Appointment</span></h2>
-        <p class="tm-section-sub mb-0">Follow our quick 4-step booking wizard to reserve your in-clinic consultation or doorstep senior home visit.</p>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-xl-11">
-          <div class="tm-booking-card-main">
-            
-            <!-- Top Stepper Navigation Bar -->
-            <div class="tm-booking-stepper-bar">
-              <div class="tm-booking-step-tab active" onclick="HomeBookingWizard.goToStep(1)">
-                <span class="tm-step-badge">1</span>
-                <span class="fw-bold small">1. Select Service</span>
-              </div>
-              <div class="text-white-50 small d-none d-sm-block"><i class="bi bi-chevron-right"></i></div>
-              <div class="tm-booking-step-tab" onclick="HomeBookingWizard.goToStep(2)">
-                <span class="tm-step-badge">2</span>
-                <span class="fw-bold small">2. Select Location</span>
-              </div>
-              <div class="text-white-50 small d-none d-sm-block"><i class="bi bi-chevron-right"></i></div>
-              <div class="tm-booking-step-tab" onclick="HomeBookingWizard.goToStep(3)">
-                <span class="tm-step-badge">3</span>
-                <span class="fw-bold small">3. Select Audiologist</span>
-              </div>
-              <div class="text-white-50 small d-none d-sm-block"><i class="bi bi-chevron-right"></i></div>
-              <div class="tm-booking-step-tab" onclick="HomeBookingWizard.goToStep(4)">
-                <span class="tm-step-badge">4</span>
-                <span class="fw-bold small">4. Date & Time</span>
-              </div>
-            </div>
-
-            <!-- Card Body Content: Left Step Forms (Col-lg-8) + Right Live Summary (Col-lg-4) -->
-            <div class="row g-0">
-              <div class="col-lg-8 p-4 p-md-5">
-                
-                <!-- STEP 1: SELECT SERVICE -->
-                <div id="tmBookingStepPane1" class="tm-booking-step-pane">
-                  <div class="d-flex justify-content-between align-items-center mb-1">
-                    <h5 class="fw-bold text-navy mb-0">Step 1: Select Service</h5>
-                    <span class="badge bg-orange-subtle text-orange small">Step 1 of 4</span>
-                  </div>
-                  <p class="text-secondary small mb-4">Choose from hearing evaluations, trials, consultations, therapy, or servicing.</p>
-
-                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-4">
-                    <!-- Service 1: Hearing Test -->
-                    <div class="col">
-                      <div class="tm-booking-option-card tm-booking-service-card selected" data-service-title="Hearing Test" data-service-desc="PTA, Tympanometry & Sound-Booth Diagnostics">
-                        <span class="tm-booking-option-check"><i class="bi bi-check-lg"></i></span>
-                        <div class="tm-booking-opt-icon"><i class="bi bi-soundwave"></i></div>
-                        <h6 class="fw-bold text-navy mb-1">Hearing Test</h6>
-                        <p class="text-secondary small mb-0">PTA & Tymp diagnostic sound-booth evaluation</p>
-                      </div>
-                    </div>
-
-                    <!-- Service 2: Audiologist Consultation -->
-                    <div class="col">
-                      <div class="tm-booking-option-card tm-booking-service-card" data-service-title="Audiologist Consultation" data-service-desc="Clinical Audiological Advice & Audiogram Review">
-                        <span class="tm-booking-option-check"><i class="bi bi-check-lg"></i></span>
-                        <div class="tm-booking-opt-icon"><i class="bi bi-person-badge-fill"></i></div>
-                        <h6 class="fw-bold text-navy mb-1">Audiologist Consultation</h6>
-                        <p class="text-secondary small mb-0">Clinical advice & personalized hearing counsel</p>
-                      </div>
-                    </div>
-
-                    <!-- Service 3: Speech Therapy -->
-                    <div class="col">
-                      <div class="tm-booking-option-card tm-booking-service-card" data-service-title="Speech Therapy" data-service-desc="Speech Pathology for Kids & Adults">
-                        <span class="tm-booking-option-check"><i class="bi bi-check-lg"></i></span>
-                        <div class="tm-booking-opt-icon"><i class="bi bi-chat-heart-fill"></i></div>
-                        <h6 class="fw-bold text-navy mb-1">Speech Therapy</h6>
-                        <p class="text-secondary small mb-0">Pediatric speech delay & adult speech recovery</p>
-                      </div>
-                    </div>
-
-                    <!-- Service 4: Hearing Aid Trial -->
-                    <div class="col">
-                      <div class="tm-booking-option-card tm-booking-service-card" data-service-title="Hearing Aid Trial" data-service-desc="7-Day Free Trial of Digital Hearing Aids">
-                        <span class="tm-booking-option-check"><i class="bi bi-check-lg"></i></span>
-                        <div class="tm-booking-opt-icon"><i class="bi bi-earbuds"></i></div>
-                        <h6 class="fw-bold text-navy mb-1">Hearing Aid Trial</h6>
-                        <p class="text-secondary small mb-0">7-day free digital trial with Phonak, Oticon & Widex</p>
-                      </div>
-                    </div>
-
-                    <!-- Service 5: Repair -->
-                    <div class="col">
-                      <div class="tm-booking-option-card tm-booking-service-card" data-service-title="Repair & Servicing" data-service-desc="Cleaning, Moisture Removal, Recalibration & Parts">
-                        <span class="tm-booking-option-check"><i class="bi bi-check-lg"></i></span>
-                        <div class="tm-booking-opt-icon"><i class="bi bi-tools"></i></div>
-                        <h6 class="fw-bold text-navy mb-1">Repair</h6>
-                        <p class="text-secondary small mb-0">Ultrasonic cleaning, tuning & genuine spare parts</p>
-                      </div>
-                    </div>
-
-                    <!-- Service 6: Home Visit -->
-                    <div class="col">
-                      <div class="tm-booking-option-card tm-booking-service-card" data-service-title="Home Visit" data-service-desc="Doorstep Audiology for Seniors & Elderly">
-                        <span class="tm-booking-option-check"><i class="bi bi-check-lg"></i></span>
-                        <div class="tm-booking-opt-icon"><i class="bi bi-house-door-fill"></i></div>
-                        <h6 class="fw-bold text-navy mb-1">Home Visit</h6>
-                        <p class="text-secondary small mb-0">Doorstep audiologist visit for senior citizens</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="d-flex justify-content-end">
-                    <button type="button" class="tm-btn tm-btn-primary px-4" onclick="HomeBookingWizard.nextStep()">
-                      Continue to Location <i class="bi bi-arrow-right ms-1"></i>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- STEP 2: SELECT LOCATION -->
-                <div id="tmBookingStepPane2" class="tm-booking-step-pane" style="display: none;">
-                  <div class="d-flex justify-content-between align-items-center mb-1">
-                    <h5 class="fw-bold text-navy mb-0">Step 2: Select Location</h5>
-                    <span class="badge bg-orange-subtle text-orange small">Step 2 of 4</span>
-                  </div>
-                  <p class="text-secondary small mb-4">Choose in-clinic sound-booth testing or a convenient doorstep home visit.</p>
-
-                  <div class="row g-3 mb-4">
-                    <!-- Location 1: Clinic -->
-                    <div class="col-md-6">
-                      <div class="tm-booking-option-card tm-booking-location-card selected" data-location-title="Clinic Visit (Gaur City Centre)" data-location-type="clinic">
-                        <span class="tm-booking-option-check"><i class="bi bi-check-lg"></i></span>
-                        <div class="tm-booking-opt-icon"><i class="bi bi-building"></i></div>
-                        <h6 class="fw-bold text-navy mb-1">Clinic Visit</h6>
-                        <p class="text-secondary small mb-2">Turtle Maarks Hearing Centre, Gaur City, Greater Noida West</p>
-                        <div class="small text-muted mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Calibrated Sound-Treated Booth</div>
-                        <div class="small text-muted"><i class="bi bi-check-circle-fill text-success me-1"></i> Full Range of 50+ Trial Hearing Aids</div>
-                      </div>
-                    </div>
-
-                    <!-- Location 2: Home Visit -->
-                    <div class="col-md-6">
-                      <div class="tm-booking-option-card tm-booking-location-card" data-location-title="Home Visit (Greater Noida West & Noida)" data-location-type="home">
-                        <span class="tm-booking-option-check"><i class="bi bi-check-lg"></i></span>
-                        <div class="tm-booking-opt-icon"><i class="bi bi-house-heart-fill"></i></div>
-                        <h6 class="fw-bold text-navy mb-1">Home Visit</h6>
-                        <p class="text-secondary small mb-2">Doorstep audiologist visit across Greater Noida West & Noida</p>
-                        <div class="small text-muted mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Portable Calibrated Audiometry Kit</div>
-                        <div class="small text-muted"><i class="bi bi-check-circle-fill text-success me-1"></i> 100% Free for Senior Citizens</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="d-flex justify-content-between">
-                    <button type="button" class="tm-btn tm-btn-outline-navy px-4" onclick="HomeBookingWizard.prevStep()">
-                      <i class="bi bi-arrow-left me-1"></i> Back
-                    </button>
-                    <button type="button" class="tm-btn tm-btn-primary px-4" onclick="HomeBookingWizard.nextStep()">
-                      Continue to Audiologist <i class="bi bi-arrow-right ms-1"></i>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- STEP 3: SELECT AUDIOLOGIST -->
-                <div id="tmBookingStepPane3" class="tm-booking-step-pane" style="display: none;">
-                  <div class="d-flex justify-content-between align-items-center mb-1">
-                    <h5 class="fw-bold text-navy mb-0">Step 3: Select Audiologist</h5>
-                    <span class="badge bg-orange-subtle text-orange small">Step 3 of 4</span>
-                  </div>
-                  <p class="text-secondary small mb-4">Choose an RCI-registered audiologist or select any available clinician for the fastest slot.</p>
-
-                  <div class="row g-3 mb-4">
-                    <!-- Doctor 1: Any Available -->
-                    <div class="col-md-6">
-                      <div class="tm-booking-option-card tm-booking-doctor-card selected" data-doctor-name="Any Available Senior Audiologist">
-                        <span class="tm-booking-option-check"><i class="bi bi-check-lg"></i></span>
-                        <div class="d-flex align-items-center gap-3 mb-2">
-                          <div class="tm-booking-opt-icon mb-0"><i class="bi bi-lightning-charge-fill text-warning"></i></div>
-                          <div>
-                            <h6 class="fw-bold text-navy mb-0">Any Available Audiologist</h6>
-                            <span class="badge bg-success-subtle text-success small">Fastest Slot Booking</span>
-                          </div>
-                        </div>
-                        <p class="text-secondary small mb-0">Allocates the earliest available RCI-certified senior clinician.</p>
-                      </div>
-                    </div>
-
-                    <!-- Doctor 2: Dr. Ritu Verma -->
-                    <div class="col-md-6">
-                      <div class="tm-booking-option-card tm-booking-doctor-card" data-doctor-name="Dr. Ritu Verma, MASLP">
-                        <span class="tm-booking-option-check"><i class="bi bi-check-lg"></i></span>
-                        <div class="d-flex align-items-center gap-3 mb-2">
-                          <img src="assets/images/about-us.jpg" alt="Dr. Ritu Verma" class="rounded-circle border" style="width: 44px; height: 44px; object-fit: cover;">
-                          <div>
-                            <h6 class="fw-bold text-navy mb-0">Dr. Ritu Verma, MASLP</h6>
-                            <span class="small text-orange fw-bold">Senior Clinical Audiologist (14+ Yrs)</span>
-                          </div>
-                        </div>
-                        <p class="text-secondary small mb-0">Adult audiology, Real-Ear Measurement & digital programming expert.</p>
-                      </div>
-                    </div>
-
-                    <!-- Doctor 3: Dr. Saurabh Mishra -->
-                    <div class="col-md-6">
-                      <div class="tm-booking-option-card tm-booking-doctor-card" data-doctor-name="Dr. Saurabh Mishra, BASLP">
-                        <span class="tm-booking-option-check"><i class="bi bi-check-lg"></i></span>
-                        <div class="d-flex align-items-center gap-3 mb-2">
-                          <img src="assets/images/team/team-02.webp" alt="Dr. Saurabh Mishra" class="rounded-circle border" style="width: 44px; height: 44px; object-fit: cover;">
-                          <div>
-                            <h6 class="fw-bold text-navy mb-0">Dr. Saurabh Mishra, BASLP</h6>
-                            <span class="small text-orange fw-bold">Pediatric & Electrophysiology (10+ Yrs)</span>
-                          </div>
-                        </div>
-                        <p class="text-secondary small mb-0">BERA/ABR, OAE testing & pediatric hearing assessment specialist.</p>
-                      </div>
-                    </div>
-
-                    <!-- Doctor 4: Dr. Meenakshi Sundaram -->
-                    <div class="col-md-6">
-                      <div class="tm-booking-option-card tm-booking-doctor-card" data-doctor-name="Dr. Meenakshi Sundaram, MASLP">
-                        <span class="tm-booking-option-check"><i class="bi bi-check-lg"></i></span>
-                        <div class="d-flex align-items-center gap-3 mb-2">
-                          <img src="assets/images/ear-model.jpg" alt="Dr. Meenakshi Sundaram" class="rounded-circle border" style="width: 44px; height: 44px; object-fit: cover;">
-                          <div>
-                            <h6 class="fw-bold text-navy mb-0">Dr. Meenakshi Sundaram, MASLP</h6>
-                            <span class="small text-orange fw-bold">Speech-Language Pathologist (12+ Yrs)</span>
-                          </div>
-                        </div>
-                        <p class="text-secondary small mb-0">Speech therapy, child language delay & tinnitus acoustic therapy.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="d-flex justify-content-between">
-                    <button type="button" class="tm-btn tm-btn-outline-navy px-4" onclick="HomeBookingWizard.prevStep()">
-                      <i class="bi bi-arrow-left me-1"></i> Back
-                    </button>
-                    <button type="button" class="tm-btn tm-btn-primary px-4" onclick="HomeBookingWizard.nextStep()">
-                      Continue to Date & Time <i class="bi bi-arrow-right ms-1"></i>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- STEP 4: SELECT DATE & TIME + PATIENT DETAILS -->
-                <div id="tmBookingStepPane4" class="tm-booking-step-pane" style="display: none;">
-                  <div class="d-flex justify-content-between align-items-center mb-1">
-                    <h5 class="fw-bold text-navy mb-0">Step 4: Select Date & Time</h5>
-                    <span class="badge bg-orange-subtle text-orange small">Step 4 of 4</span>
-                  </div>
-                  <p class="text-secondary small mb-3">Choose your slot and provide patient contact details for instant confirmation.</p>
-
-                  <!-- Date Selector Strip -->
-                  <label class="fw-bold text-navy small mb-2 d-block"><i class="bi bi-calendar-event text-orange me-1"></i> Select Date:</label>
-                  <div id="tmHomeBookingDateStrip" class="d-flex gap-2 overflow-auto pb-2 mb-3">
-                    <!-- Rendered dynamically by HomeBookingWizard.generateDatePills() -->
-                  </div>
-
-                  <!-- Time Slots -->
-                  <label class="fw-bold text-navy small mb-2 d-block"><i class="bi bi-clock text-orange me-1"></i> Select Time Slot:</label>
-                  <div class="row row-cols-2 row-cols-sm-4 g-2 mb-4">
-                    <div class="col"><button type="button" class="w-100 tm-time-slot-btn tm-booking-time-btn selected" data-time-slot="10:00 AM - 11:00 AM">10:00 AM</button></div>
-                    <div class="col"><button type="button" class="w-100 tm-time-slot-btn tm-booking-time-btn" data-time-slot="11:30 AM - 12:30 PM">11:30 AM</button></div>
-                    <div class="col"><button type="button" class="w-100 tm-time-slot-btn tm-booking-time-btn" data-time-slot="12:30 PM - 01:30 PM">12:30 PM</button></div>
-                    <div class="col"><button type="button" class="w-100 tm-time-slot-btn tm-booking-time-btn" data-time-slot="02:00 PM - 03:00 PM">02:00 PM</button></div>
-                    <div class="col"><button type="button" class="w-100 tm-time-slot-btn tm-booking-time-btn" data-time-slot="03:30 PM - 04:30 PM">03:30 PM</button></div>
-                    <div class="col"><button type="button" class="w-100 tm-time-slot-btn tm-booking-time-btn" data-time-slot="05:00 PM - 06:00 PM">05:00 PM</button></div>
-                    <div class="col"><button type="button" class="w-100 tm-time-slot-btn tm-booking-time-btn" data-time-slot="06:30 PM - 07:30 PM">06:30 PM</button></div>
-                    <div class="col"><button type="button" class="w-100 tm-time-slot-btn tm-booking-time-btn" data-time-slot="07:30 PM - 08:00 PM">07:30 PM</button></div>
-                  </div>
-
-                  <!-- Patient Information Fields -->
-                  <div class="p-3 bg-light rounded-3 border mb-4">
-                    <h6 class="fw-bold text-navy mb-2 small"><i class="bi bi-person-fill text-orange me-1"></i> Patient Contact Information:</h6>
-                    <div class="row g-2">
-                      <div class="col-md-6">
-                        <label class="form-label small text-muted mb-1">Patient Full Name *</label>
-                        <input type="text" id="tmHomePatientName" class="form-control form-control-sm" placeholder="e.g. Ramesh Sharma" required>
-                      </div>
-                      <div class="col-md-6">
-                        <label class="form-label small text-muted mb-1">Mobile / WhatsApp Number *</label>
-                        <input type="tel" id="tmHomePatientPhone" class="form-control form-control-sm" placeholder="e.g. 9876543210" required>
-                      </div>
-                      <div class="col-12">
-                        <label class="form-label small text-muted mb-1">Special Notes / Symptoms (Optional)</label>
-                        <input type="text" id="tmHomePatientNotes" class="form-control form-control-sm" placeholder="e.g. Tinnitus in left ear, senior citizen home visit requested...">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="d-flex justify-content-between">
-                    <button type="button" class="tm-btn tm-btn-outline-navy px-4" onclick="HomeBookingWizard.prevStep()">
-                      <i class="bi bi-arrow-left me-1"></i> Back
-                    </button>
-                    <button type="button" class="tm-btn tm-btn-primary px-4 fw-bold" onclick="HomeBookingWizard.confirmAppointment()">
-                      Confirm Appointment <i class="bi bi-check-circle-fill ms-1"></i>
-                    </button>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- RIGHT: LIVE BOOKING SUMMARY PREVIEW (Col-lg-4) -->
-              <div class="col-lg-4">
-                <div class="tm-booking-summary-pane">
-                  <div class="d-flex align-items-center gap-2 mb-3">
-                    <i class="bi bi-clipboard2-check text-orange fs-5"></i>
-                    <h6 class="fw-bold text-navy mb-0">Live Booking Summary</h6>
-                  </div>
-
-                  <div class="tm-summary-row">
-                    <span class="text-muted">Service:</span>
-                    <strong class="text-navy" id="tmLiveSummaryService">Hearing Test</strong>
-                  </div>
-
-                  <div class="tm-summary-row">
-                    <span class="text-muted">Location:</span>
-                    <strong class="text-navy text-end ps-2" id="tmLiveSummaryLocation">Clinic Visit</strong>
-                  </div>
-
-                  <div class="tm-summary-row">
-                    <span class="text-muted">Audiologist:</span>
-                    <strong class="text-navy text-end ps-2" id="tmLiveSummaryDoctor">Any Available</strong>
-                  </div>
-
-                  <div class="tm-summary-row">
-                    <span class="text-muted">Date & Time:</span>
-                    <strong class="text-orange text-end ps-2" id="tmLiveSummaryDateTime">Today • 10:00 AM</strong>
-                  </div>
-
-                  <div class="mt-4 p-3 bg-white rounded-3 border">
-                    <div class="d-flex align-items-center gap-2 mb-2">
-                      <i class="bi bi-patch-check-fill text-success fs-5"></i>
-                      <span class="fw-bold text-navy small">Guaranteed Benefits</span>
-                    </div>
-                    <ul class="list-unstyled small text-secondary mb-0">
-                      <li class="mb-1">✓ Zero waiting time at clinic</li>
-                      <li class="mb-1">✓ Same-day audiometry diagnostic report</li>
-                      <li class="mb-1">✓ 7-day free trial on recommended aids</li>
-                      <li>✓ 100% Free home visit for senior citizens</li>
-                    </ul>
-                  </div>
-
-                  <div class="mt-auto pt-4 text-center">
-                    <div class="small text-muted mb-1">Need immediate doctor guidance?</div>
-                    <a href="tel:+918130495476" class="text-navy fw-bold small text-decoration-none">
-                      <i class="bi bi-telephone-fill text-orange me-1"></i> +91 8130495476
-                    </a>
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
 
   <!-- 1. EXPLORE BY FORM FACTOR & CATEGORY -->
   <section class="py-5 bg-white">
     <div class="container">
       <div class="d-flex justify-content-between align-items-end tm-section-head mb-4">
         <div>
-          <span class="tm-pill tm-pill-orange mb-2"><i class="bi bi-grid-fill"></i> Hearing Solutions by Form Factor</span>
+          <span class="tm-pill tm-pill-orange mb-2"><i class="bi bi-grid-fill"></i> Hearing Solutions</span>
           <h2 class="tm-section-title mb-1">Explore by <span>Category</span></h2>
           <p class="tm-section-sub mb-0">Choose by form factor, clinical invisibility, high-power output, or care essentials</p>
         </div>
         <a href="products.php" class="tm-btn tm-btn-outline-navy tm-btn-sm d-none d-sm-inline-flex">View All Models <i class="bi bi-arrow-right"></i></a>
       </div>
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3">
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-2 g-md-3">
         <!-- RIC -->
         <div class="col">
           <a href="products.php?style=RIC" class="tm-cat-card-lux tm-cat-theme-orange">
@@ -501,6 +139,12 @@ include __DIR__ . '/includes/header.php';
           </a>
         </div>
       </div>
+
+      <div class="text-center mt-3 d-sm-none">
+        <a href="products.php" class="tm-btn tm-btn-outline-navy tm-btn-sm w-100">
+          View All Models <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -531,7 +175,7 @@ include __DIR__ . '/includes/header.php';
 
       <div class="text-center mt-4">
         <a href="products.php" class="tm-btn tm-btn-primary px-4 py-2">
-          View Complete 50+ Models Catalog <i class="bi bi-arrow-right ms-1"></i>
+          View All Products <i class="bi bi-arrow-right ms-1"></i>
         </a>
       </div>
     </div>
@@ -544,7 +188,7 @@ include __DIR__ . '/includes/header.php';
       <!-- Section Header -->
       <div class="text-center max-w-700 mx-auto mb-4">
         <span class="tm-pill tm-pill-orange mb-2"><i class="bi bi-patch-check-fill text-success"></i> 100% Authorized Dispenser</span>
-        <h2 class="tm-section-title mb-2">Explore by <span class="text-orange">Authorized Brands</span></h2>
+        <h2 class="tm-section-title mb-2">Explore by <span class="text-orange">Brands</span></h2>
         <p class="tm-section-sub mb-0">Official dispensers for world-leading Swiss, Danish, German, American & Canadian hearing technology.</p>
       </div>
 
@@ -1030,10 +674,10 @@ include __DIR__ . '/includes/header.php';
 
         <!-- RIGHT PART: FULLY VISIBLE HIGH-RES POSTER BANNER -->
         <div class="col-lg-5 col-xl-5 d-flex">
-          <div class="tm-finder-poster-wrap w-100 d-flex align-items-center justify-content-center bg-white p-2 p-md-3">
+          <div class="tm-finder-poster-wrap w-100 d-flex align-items-center justify-content-center p-0 border-0 shadow-none bg-transparent">
             <img src="assets/images/banners/personalized-hearing.png" 
                  alt="Not Sure Which Hearing Aid Is Right For You? — Personalized Hearing Aid Finder" 
-                 class="tm-finder-poster-img rounded-3 shadow-xs" 
+                 class="tm-finder-poster-img rounded-4 shadow-sm" 
                  loading="lazy">
           </div>
         </div>
@@ -1164,103 +808,95 @@ include __DIR__ . '/includes/header.php';
     }
   </script>
 
-  <!-- 5. SOUND-BOOTH DIAGNOSTIC HEARING SERVICES -->
-  <section class="py-5 bg-light">
+  <!-- 5. SOUND-BOOTH DIAGNOSTIC HEARING TESTS -->
+  <section class="py-5 bg-white tm-diagnostic-showcase-section border-top border-bottom" id="diagnosticHearingTests">
     <div class="container">
+      
+      <!-- Section Header -->
       <div class="d-flex justify-content-between align-items-end tm-section-head mb-4">
         <div>
           <span class="tm-pill tm-pill-teal mb-2"><i class="bi bi-soundwave"></i> Sound-Booth Precision Diagnostics</span>
           <h2 class="tm-section-title mb-1">Diagnostic <span>Hearing Tests</span></h2>
           <p class="tm-section-sub mb-0">Calibrated audiometer assessments with instant certified clinical reports</p>
         </div>
-        <a href="diagnostic-services.php" class="tm-btn tm-btn-outline-navy tm-btn-sm d-none d-sm-inline-flex">All Tests <i class="bi bi-arrow-right"></i></a>
+        <a href="diagnostic-services.php" class="tm-btn tm-btn-outline-navy tm-btn-sm d-none d-sm-inline-flex">All Tests <i class="bi bi-arrow-right ms-1"></i></a>
       </div>
 
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
-        <!-- Test 1: PTA -->
+      <!-- 4 Diagnostic Cards Grid -->
+      <div class="row row-cols-2 row-cols-md-2 row-cols-lg-4 g-2 g-md-4">
+        
+        <!-- Service 1: PTA -->
         <div class="col">
-          <div class="tm-diag-card">
-            <div>
-              <div class="tm-diag-icon"><i class="bi bi-soundwave"></i></div>
-              <h6 class="fw-bold text-navy mb-1">PTA (Pure Tone Audiometry)</h6>
-              <p class="text-secondary small mb-3">Air & bone conduction threshold testing across 250Hz - 8kHz frequency spectrum.</p>
-            </div>
-            <div>
-              <div class="d-flex justify-content-between align-items-baseline mb-2">
-                <span class="fw-bold text-navy fs-5">₹1,200</span>
-                <span class="small text-muted"><i class="bi bi-clock"></i> 30 Mins</span>
-              </div>
-              <div class="d-grid gap-1">
-                <button class="tm-btn tm-btn-primary tm-btn-sm" onclick="Cart.addItem({id:'diag-pta', name:'PTA Pure Tone Audiometry', brand:'Turtle Maarks', price:1200, type:'Diagnostic Test', image:'assets/images/services/pta.webp'})">Add to Cart</button>
-                <a href="book-appointment.php" class="tm-btn tm-btn-outline-navy tm-btn-sm">Book Slot</a>
-              </div>
-            </div>
+          <div class="tm-diag-service-card">
+            <a href="pta-pure-tone-audiometry.php" class="d-block w-100 tm-diag-service-img-wrap" title="Pure Tone Audiometry (PTA)">
+              <img src="assets/images/services/pta.webp" alt="PTA Pure Tone Audiometry" class="tm-diag-service-img" loading="lazy">
+            </a>
+            <h3 class="tm-diag-service-title">
+              <a href="pta-pure-tone-audiometry.php" class="text-decoration-none text-reset">PTA</a>
+            </h3>
+            <p class="tm-diag-service-desc">Pure Tone Audiometry (PTA) is a fundamental hearing test used to evaluate</p>
+            <a href="pta-pure-tone-audiometry.php" class="tm-diag-service-link">
+              <span>Learn More</span> <i class="bi bi-chevron-right"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Test 2: Tympanometry -->
+        <!-- Service 2: Tymp -->
         <div class="col">
-          <div class="tm-diag-card">
-            <div>
-              <div class="tm-diag-icon"><i class="bi bi-activity"></i></div>
-              <h6 class="fw-bold text-navy mb-1">Tympanometry (Tymp)</h6>
-              <p class="text-secondary small mb-3">Middle ear pressure, acoustic reflex, fluid presence, and eardrum compliance check.</p>
-            </div>
-            <div>
-              <div class="d-flex justify-content-between align-items-baseline mb-2">
-                <span class="fw-bold text-navy fs-5">₹800</span>
-                <span class="small text-muted"><i class="bi bi-clock"></i> 15 Mins</span>
-              </div>
-              <div class="d-grid gap-1">
-                <button class="tm-btn tm-btn-primary tm-btn-sm" onclick="Cart.addItem({id:'diag-tymp', name:'Tympanometry (Tymp)', brand:'Turtle Maarks', price:800, type:'Diagnostic Test', image:'assets/images/services/tymp.webp'})">Add to Cart</button>
-                <a href="book-appointment.php" class="tm-btn tm-btn-outline-navy tm-btn-sm">Book Slot</a>
-              </div>
-            </div>
+          <div class="tm-diag-service-card">
+            <a href="tymp-tympanometry.php" class="d-block w-100 tm-diag-service-img-wrap" title="Tympanometry (Tymp)">
+              <img src="assets/images/services/tymp.webp" alt="Tympanometry (Tymp)" class="tm-diag-service-img" loading="lazy">
+            </a>
+            <h3 class="tm-diag-service-title">
+              <a href="tymp-tympanometry.php" class="text-decoration-none text-reset">Tymp</a>
+            </h3>
+            <p class="tm-diag-service-desc">Tympanometry is a quick and painless diagnostic test that evaluates</p>
+            <a href="tymp-tympanometry.php" class="tm-diag-service-link">
+              <span>Learn More</span> <i class="bi bi-chevron-right"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Test 3: BERA -->
+        <!-- Service 3: BERA -->
         <div class="col">
-          <div class="tm-diag-card">
-            <div>
-              <div class="tm-diag-icon"><i class="bi bi-cpu"></i></div>
-              <h6 class="fw-bold text-navy mb-1">BERA / ABR Test</h6>
-              <p class="text-secondary small mb-3">Auditory Brainstem Response neuro-electrical test for infants and auditory nerve evaluation.</p>
-            </div>
-            <div>
-              <div class="d-flex justify-content-between align-items-baseline mb-2">
-                <span class="fw-bold text-navy fs-5">₹3,500</span>
-                <span class="small text-muted"><i class="bi bi-clock"></i> 60 Mins</span>
-              </div>
-              <div class="d-grid gap-1">
-                <button class="tm-btn tm-btn-primary tm-btn-sm" onclick="Cart.addItem({id:'diag-bera', name:'BERA Brainstem Evoked Response', brand:'Turtle Maarks', price:3500, type:'Diagnostic Test', image:'assets/images/services/bera.webp'})">Add to Cart</button>
-                <a href="book-appointment.php" class="tm-btn tm-btn-outline-navy tm-btn-sm">Book Slot</a>
-              </div>
-            </div>
+          <div class="tm-diag-service-card">
+            <a href="bera-brain-evoked-response-audiometry.php" class="d-block w-100 tm-diag-service-img-wrap" title="Brain Evoked Response Audiometry (BERA)">
+              <img src="assets/images/services/bera.webp" alt="BERA Brain Evoked Response Audiometry" class="tm-diag-service-img" loading="lazy">
+            </a>
+            <h3 class="tm-diag-service-title">
+              <a href="bera-brain-evoked-response-audiometry.php" class="text-decoration-none text-reset">BERA</a>
+            </h3>
+            <p class="tm-diag-service-desc">BERA, or Brain Evoked Response Audiometry, is a non-invasive diagnostic</p>
+            <a href="bera-brain-evoked-response-audiometry.php" class="tm-diag-service-link">
+              <span>Learn More</span> <i class="bi bi-chevron-right"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Test 4: OAE -->
+        <!-- Service 4: OAE -->
         <div class="col">
-          <div class="tm-diag-card">
-            <div>
-              <div class="tm-diag-icon"><i class="bi bi-earbuds"></i></div>
-              <h6 class="fw-bold text-navy mb-1">OAE Screening</h6>
-              <p class="text-secondary small mb-3">Otoacoustic Emission test measuring outer cochlear hair-cell function for newborns & adults.</p>
-            </div>
-            <div>
-              <div class="d-flex justify-content-between align-items-baseline mb-2">
-                <span class="fw-bold text-navy fs-5">₹1,500</span>
-                <span class="small text-muted"><i class="bi bi-clock"></i> 20 Mins</span>
-              </div>
-              <div class="d-grid gap-1">
-                <button class="tm-btn tm-btn-primary tm-btn-sm" onclick="Cart.addItem({id:'diag-oae', name:'OAE Otoacoustic Emission', brand:'Turtle Maarks', price:1500, type:'Diagnostic Test', image:'assets/images/services/oae.webp'})">Add to Cart</button>
-                <a href="book-appointment.php" class="tm-btn tm-btn-outline-navy tm-btn-sm">Book Slot</a>
-              </div>
-            </div>
+          <div class="tm-diag-service-card">
+            <a href="oae-oto-acoustic-emission.php" class="d-block w-100 tm-diag-service-img-wrap" title="Oto Acoustic Emissions (OAE)">
+              <img src="assets/images/services/oae.webp" alt="OAE Oto Acoustic Emissions" class="tm-diag-service-img" loading="lazy">
+            </a>
+            <h3 class="tm-diag-service-title">
+              <a href="oae-oto-acoustic-emission.php" class="text-decoration-none text-reset">OAE</a>
+            </h3>
+            <p class="tm-diag-service-desc">Oto Acoustic Emissions (OAE) is a quick, non-invasive test used</p>
+            <a href="oae-oto-acoustic-emission.php" class="tm-diag-service-link">
+              <span>Learn More</span> <i class="bi bi-chevron-right"></i>
+            </a>
           </div>
         </div>
+
       </div>
+
+      <div class="text-center mt-3 d-sm-none">
+        <a href="diagnostic-services.php" class="tm-btn tm-btn-outline-navy tm-btn-sm w-100">
+          All Tests <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -1990,6 +1626,12 @@ include __DIR__ . '/includes/header.php';
           </article>
         </div>
 
+      </div>
+
+      <div class="text-center mt-3 d-md-none">
+        <a href="blogs.php" class="tm-btn tm-btn-outline-navy tm-btn-sm w-100">
+          Explore All Insights <i class="bi bi-arrow-right ms-1"></i>
+        </a>
       </div>
 
     </div>

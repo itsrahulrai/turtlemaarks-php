@@ -142,7 +142,7 @@ $page_css         = $page_css         ?? [];
   <!-- ============ MOBILE OFFCANVAS NAV ============ -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="tmMobileNav">
     <div class="offcanvas-header border-bottom">
-      <img src="<?= e(url(SITE_LOGO)) ?>" alt="<?= e(SITE_SHORT) ?>" style="height: 48px; width: auto; object-fit: contain;">
+      <img src="<?= e(url(SITE_LOGO)) ?>" alt="<?= e(SITE_SHORT) ?>" style="height: 52px; width: auto; object-fit: contain;">
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -172,7 +172,7 @@ $page_css         = $page_css         ?? [];
           <?php endif; ?>
         <?php endforeach; ?>
         <li class="nav-item"><a class="nav-link fw-bold text-navy py-2" href="<?= e(url('wishlist.php')) ?>">Wishlist</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold text-navy py-2" href="<?= e(url('login.php')) ?>">Patient Portal</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold text-navy py-2" href="<?= e(url('login.php')) ?>"><i class="bi bi-person me-1"></i> Login</a></li>
       </ul>
       <div class="d-grid gap-2">
         <a href="<?= e(url('book-appointment.php')) ?>" class="tm-btn-appointment w-100 justify-content-center py-2 fs-6">

@@ -179,10 +179,7 @@ include __DIR__ . '/includes/header.php';
             </span>
           </div>
 
-          <h3 class="fw-bold text-navy mb-2 font-heading">Find Us on Google Maps</h3>
-          <p class="text-secondary small mb-3">
-            Suite 1509, 15th Floor, Gaur City Mall, Greater Noida West. Wheelchair friendly with mall basement parking.
-          </p>
+          <h3 class="fw-bold text-navy mb-3 font-heading">Find Us on Google Maps</h3>
 
           <!-- Map stretches 100% to match the exact height of the form card on the left! -->
           <div class="flex-grow-1 w-100 rounded-3 overflow-hidden border position-relative" style="min-height: 420px;">

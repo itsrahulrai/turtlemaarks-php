@@ -22,7 +22,7 @@ $active_tab = $active_tab ?? 'dashboard';
     </div>
 
     <!-- Navigation Links -->
-    <div class="d-flex flex-column gap-1">
+    <div class="d-flex flex-column gap-1 tm-account-nav-wrap">
       <a href="<?= e(url('account-dashboard.php')) ?>" class="tm-account-nav-link <?= $active_tab === 'dashboard' ? 'active' : '' ?>">
         <span><i class="bi bi-speedometer2 me-2"></i> Dashboard</span>
         <i class="bi bi-chevron-right small opacity-50"></i>

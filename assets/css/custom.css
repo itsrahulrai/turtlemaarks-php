@@ -1778,6 +1778,122 @@ a:hover {
 }
 
 /* ==========================================================================
+   PREMIUM CLINICAL DIAGNOSTIC SHOWCASE
+   ========================================================================== */
+.tm-diagnostic-showcase-section {
+  background: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 0;
+}
+
+.tm-diag-service-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px -4px rgba(15, 62, 109, 0.07), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.tm-diag-service-card:hover {
+  transform: translateY(-10px);
+  border-color: #CBD5E1;
+  box-shadow: 0 24px 48px -10px rgba(15, 62, 109, 0.16), 0 6px 16px -2px rgba(15, 62, 109, 0.06);
+}
+
+.tm-diag-service-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  background: #F8FAFC;
+  border: 1px solid #EDF2F7;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.tm-diag-service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tm-diag-service-card:hover .tm-diag-service-img {
+  transform: scale(1.06);
+}
+
+.tm-diag-service-title {
+  color: #0F3E6D;
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  transition: color 0.25s ease;
+}
+
+.tm-diag-service-card:hover .tm-diag-service-title {
+  color: var(--tm-orange);
+}
+
+.tm-diag-service-desc {
+  color: #4A5568;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  margin-bottom: 1.35rem;
+  flex-grow: 1;
+  padding: 0 0.25rem;
+}
+
+.tm-diag-service-link {
+  color: #0F3E6D;
+  font-weight: 700;
+  font-size: 0.925rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 24px;
+  border-radius: 50px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: auto;
+  width: 100%;
+  max-width: 190px;
+}
+
+.tm-diag-service-card:hover .tm-diag-service-link,
+.tm-diag-service-link:hover {
+  background: #0F3E6D;
+  color: #FFFFFF !important;
+  border-color: #0F3E6D;
+  box-shadow: 0 6px 18px rgba(15, 62, 109, 0.22);
+  transform: translateY(-2px);
+}
+
+.tm-diag-service-link i {
+  font-size: 0.75rem;
+  font-weight: 800;
+  transition: transform 0.25s ease;
+}
+
+.tm-diag-service-card:hover .tm-diag-service-link i {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
    BRAND LOGOS BAR
    ========================================================================== */
 .tm-brand-strip {
@@ -4650,10 +4766,21 @@ a:hover {
   flex-shrink: 0;
 }
 
-/* Product Detail Tabs */
 .tm-pd-tabs {
   border-bottom: 2px solid #E2E8F0;
   gap: 0.5rem;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.tm-pd-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tm-pd-tabs .nav-item {
+  flex-shrink: 0;
 }
 
 .tm-pd-tabs .nav-link {
@@ -4666,6 +4793,11 @@ a:hover {
   border-radius: 0;
   transition: all 0.2s ease;
   background: transparent;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .tm-pd-tabs .nav-link:hover {
@@ -5495,6 +5627,10 @@ a:hover {
   height: auto;
   display: block;
   object-fit: contain;
+  border: 6px solid #FFFFFF;
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 40px rgba(11, 30, 54, 0.25);
+  box-sizing: border-box;
 }
 
 .tm-finder-quiz-card {
@@ -5765,6 +5901,452 @@ a:hover {
   padding: 0.85rem;
   backdrop-filter: blur(10px);
 }
+
+/* ==========================================================================
+   PRODUCTS CATALOG — STICKY FILTER SIDEBAR
+   ========================================================================== */
+@media (min-width: 992px) {
+  .tm-filter-sidebar-col {
+    position: relative;
+    z-index: 10;
+  }
+  .tm-filter-sidebar-col .offcanvas-lg {
+    height: 100% !important;
+    display: block !important;
+    overflow: visible !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+  .tm-filter-sidebar-col .offcanvas-body {
+    height: 100% !important;
+    display: block !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+  .tm-filter-sticky-card {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 92px !important;
+    max-height: calc(100vh - 110px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain;
+    transition: box-shadow 0.2s ease;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: 0 4px 20px -4px rgba(15, 62, 109, 0.08) !important;
+  }
+  /* Modern clean scrollbar for the filter card */
+  .tm-filter-sticky-card::-webkit-scrollbar {
+    width: 5px;
+  }
+  .tm-filter-sticky-card::-webkit-scrollbar-track {
+    background: #F8FAFC;
+    border-radius: 4px;
+  }
+  .tm-filter-sticky-card::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+  }
+  .tm-filter-sticky-card::-webkit-scrollbar-thumb:hover {
+    background: #0F3E6D;
+  }
+}
+
+/* ==========================================================================
+   MODERN CLINICAL SERVICES HUB STYLING
+   ========================================================================== */
+.tm-service-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 2.25rem;
+}
+.tm-service-tab-btn {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.tm-service-tab-btn:hover {
+  border-color: #CBD5E1;
+  color: #0F3E6D;
+  background: #F8FAFC;
+}
+.tm-service-tab-btn.active {
+  background: #0F3E6D;
+  border-color: #0F3E6D;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(15, 62, 109, 0.2);
+}
+.tm-service-tab-btn .badge {
+  font-size: 0.72rem;
+  padding: 2px 7px;
+  border-radius: 9999px;
+}
+.tm-service-tab-btn.active .badge {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #FFFFFF !important;
+}
+
+.tm-service-hub-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 62, 109, 0.04);
+}
+.tm-service-hub-card:hover {
+  transform: translateY(-5px);
+  border-color: #CBD5E1;
+  box-shadow: 0 16px 36px -8px rgba(15, 62, 109, 0.13);
+}
+.tm-service-hub-img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: #F1F5F9;
+}
+.tm-service-hub-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.tm-service-hub-card:hover .tm-service-hub-img {
+  transform: scale(1.05);
+}
+.tm-service-hub-badge-top {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+.tm-service-hub-price-tag {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 2;
+  background: rgba(15, 62, 109, 0.92);
+  backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.84rem;
+  letter-spacing: -0.2px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.tm-service-hub-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.tm-service-hub-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #0F3E6D;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+.tm-service-hub-desc {
+  font-size: 0.875rem;
+  color: #64748B;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.tm-service-hub-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tm-service-hub-features li {
+  font-size: 0.815rem;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tm-service-hub-features li i {
+  color: #10B981;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+.tm-service-hub-actions {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid #F1F5F9;
+  display: flex;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   PREMIUM DIAGNOSTIC SERVICES SIDEBAR NAVIGATION WIDGET
+   ========================================================================== */
+.tm-diag-nav-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(15, 62, 109, 0.05);
+  margin-bottom: 1.5rem;
+}
+.tm-diag-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.85rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #F1F5F9;
+}
+.tm-diag-nav-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #0F3E6D;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tm-diag-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tm-diag-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  background: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #1E293B;
+}
+.tm-diag-nav-item:hover {
+  background: #F8FAFC;
+  border-color: #CBD5E1;
+  transform: translateX(4px);
+  color: #0F3E6D;
+}
+.tm-diag-nav-item.active {
+  background: linear-gradient(135deg, #0F3E6D 0%, #1A365D 100%);
+  border-color: #0F3E6D;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 16px rgba(15, 62, 109, 0.22);
+}
+.tm-diag-nav-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tm-diag-nav-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  background: #F1F5F9;
+  color: #0F3E6D;
+  transition: all 0.2s ease;
+}
+.tm-diag-nav-item:hover .tm-diag-nav-icon {
+  background: #E2E8F0;
+  color: #EA580C;
+}
+.tm-diag-nav-item.active .tm-diag-nav-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FF8A00;
+}
+.tm-diag-nav-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+.tm-diag-nav-sub {
+  font-size: 0.74rem;
+  color: #64748B;
+  display: block;
+}
+.tm-diag-nav-item.active .tm-diag-nav-sub {
+  color: rgba(255, 255, 255, 0.75);
+}
+.tm-diag-nav-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #F1F5F9;
+  color: #475569;
+  border: 1px solid #E2E8F0;
+  white-space: nowrap;
+}
+.tm-diag-nav-item.active .tm-diag-nav-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   VERTICAL APPOINTMENT WIDGET (SAME LIKE BOOK APPOINTMENT)
+   ========================================================================== */
+.tm-vert-booking-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(15, 62, 109, 0.06);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.tm-step-badge-vert {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--tm-orange);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.tm-vert-option-card {
+  padding: 0.65rem 0.75rem !important;
+  border-radius: 10px !important;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  border: 1.5px solid #E2E8F0;
+  background: #FFFFFF;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.tm-vert-option-card:hover {
+  border-color: var(--tm-orange);
+  background: #FFFBF7;
+  transform: translateY(-2px);
+}
+.tm-vert-option-card.selected {
+  border-color: var(--tm-orange);
+  background: #FFF7ED;
+  box-shadow: 0 4px 14px rgba(255, 107, 0, 0.12);
+}
+.tm-vert-option-card .tm-booking-opt-icon {
+  width: 36px !important;
+  height: 36px !important;
+  font-size: 1.05rem !important;
+  border-radius: 8px !important;
+  margin-bottom: 0 !important;
+  background: #FFF4EC;
+  color: var(--tm-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.tm-vert-option-card.selected .tm-booking-opt-icon {
+  background: var(--tm-orange);
+  color: #FFFFFF;
+}
+.tm-vert-option-card .tm-booking-option-check {
+  position: absolute;
+  top: 10px !important;
+  right: 10px !important;
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50%;
+  border: 1.5px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem !important;
+  color: transparent;
+  transition: all 0.2s ease;
+}
+.tm-vert-option-card.selected .tm-booking-option-check {
+  background: var(--tm-orange);
+  border-color: var(--tm-orange);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   MOBILE-FIRST SERVICE LAYOUT: QUICK BOOKING CARD ALWAYS ON TOP
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .tm-service-layout-row {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .tm-service-layout-row > [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+  }
+  .tm-service-sidebar {
+    display: contents !important;
+  }
+  .tm-vert-booking-card,
+  .tm-booking-sidebar-card {
+    order: -1 !important;
+    width: 100% !important;
+    margin-bottom: 2rem !important;
+  }
+  .tm-service-main-col {
+    order: 1 !important;
+    width: 100% !important;
+  }
+  .tm-diag-nav-card {
+    order: 2 !important;
+    width: 100% !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .tm-service-assistance-card {
+    order: 3 !important;
+    width: 100% !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
+
+
+
+
 
 
 

@@ -39,10 +39,10 @@ include __DIR__ . '/includes/header.php';
   <!-- MAIN SERVICE CONTENT & BOOKING SIDEBAR -->
   <section class="py-5 bg-light">
     <div class="container">
-      <div class="row g-4">
+      <div class="row g-4 tm-service-layout-row">
         
         <!-- Left: Clinical Content -->
-        <div class="col-lg-8">
+        <div class="col-lg-8 tm-service-main-col">
           
           <div class="card rounded-4 border p-4 bg-white shadow-xs mb-4">
             <h4 class="fw-bold text-navy mb-3">Empowering Clear, Confident Communication</h4>
@@ -113,7 +113,7 @@ include __DIR__ . '/includes/header.php';
         </div>
 
         <!-- Right: Interactive Sticky Booking Card -->
-        <div class="col-lg-4">
+        <div class="col-lg-4 tm-service-sidebar">
           <div class="tm-booking-sidebar-card">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <h5 class="fw-bold text-navy mb-0">Book Therapy Slot</h5>

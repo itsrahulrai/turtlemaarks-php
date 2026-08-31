@@ -42,32 +42,24 @@ $active_nav       = 'products';
 include __DIR__ . '/includes/header.php';
 ?>
 
-<!-- BREADCRUMB & CLINICAL GUARANTEE BAR -->
-<div class="py-2 bg-white border-bottom small">
-  <div class="container">
-    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
-      <nav aria-label="breadcrumb">
-        <div class="tm-breadcrumb-pill tm-breadcrumb-pill-light mb-0">
+  <!-- HERO BANNER -->
+  <section class="tm-page-hero text-center position-relative">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="d-inline-flex mw-100 mb-2">
+        <div class="tm-breadcrumb-pill">
           <a href="<?= e(url('index.php')) ?>"><i class="bi bi-house-door"></i> Home</a>
-          <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
-          <a href="<?= e(url('products.php')) ?>">Hearing Aids</a>
+          <span class="tm-breadcrumb-sep d-none d-sm-inline-flex"><i class="bi bi-chevron-right"></i></span>
+          <a href="<?= e(url('products.php')) ?>" class="d-none d-sm-inline-flex">Products</a>
           <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
           <a href="<?= e(url('products.php?brand=' . urlencode($p['brand']))) ?>"><?= e($p['brand']) ?></a>
           <span class="tm-breadcrumb-sep"><i class="bi bi-chevron-right"></i></span>
-          <span class="tm-breadcrumb-current text-truncate" style="max-width: 260px;" aria-current="page"><?= e($p['name']) ?></span>
+          <span class="tm-breadcrumb-current" aria-current="page"><?= e($p['name']) ?></span>
         </div>
       </nav>
-      <div class="d-none d-md-flex align-items-center gap-2">
-        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">
-          <i class="bi bi-shield-check me-1"></i> 100% Genuine Clinical Stock
-        </span>
-        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1">
-          <i class="bi bi-patch-check me-1"></i> RCI-Certified Dispenser
-        </span>
-      </div>
+      <h1 class="display-6 fw-bold text-white mb-2 font-heading"><?= e($p['name']) ?></h1>
+      <p class="text-white-50 mx-auto small mb-0" style="max-width: 680px;">Official <?= e($p['brand']) ?> (<?= e($p['brandOrigin'] ?? 'Denmark') ?>) <?= e($p['style']) ?> digital hearing aid with <?= (int) $p['channels'] ?> DSP processing channels.</p>
     </div>
-  </div>
-</div>
+  </section>
 
 <!-- =========================================================================
      PRODUCT HERO & BUYING SHOWCASE
@@ -180,7 +172,7 @@ include __DIR__ . '/includes/header.php';
           </div>
 
           <!-- Product Title -->
-          <h1 class="h3 fw-bold text-navy mb-2 font-heading"><?= e($p['name']) ?></h1>
+          <h2 class="h3 fw-bold text-navy mb-2 font-heading"><?= e($p['name']) ?></h2>
 
           <!-- Reviews & Rating -->
           <div class="d-flex align-items-center flex-wrap gap-2 mb-3">

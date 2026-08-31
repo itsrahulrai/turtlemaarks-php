@@ -123,11 +123,9 @@ function initSearchAutocomplete() {
 function updateGlobalBadges() {
   const cart = JSON.parse(localStorage.getItem('turtle_cart') || '[]');
   const wishlist = JSON.parse(localStorage.getItem('turtle_wishlist') || '[]');
-  const compare = JSON.parse(localStorage.getItem('turtle_compare') || '[]');
 
   const cartBadges = document.querySelectorAll('.tm-cart-badge-count');
   const wishlistBadges = document.querySelectorAll('.tm-wishlist-badge-count');
-  const compareBadges = document.querySelectorAll('.tm-compare-badge-count');
 
   const totalCartQty = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
 
@@ -139,11 +137,6 @@ function updateGlobalBadges() {
   wishlistBadges.forEach(b => {
     b.textContent = wishlist.length;
     b.style.display = wishlist.length > 0 ? 'inline-block' : 'none';
-  });
-
-  compareBadges.forEach(b => {
-    b.textContent = compare.length;
-    b.style.display = compare.length > 0 ? 'inline-block' : 'none';
   });
 }
 

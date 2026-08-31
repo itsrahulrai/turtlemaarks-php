@@ -32,58 +32,276 @@ include __DIR__ . '/includes/header.php';
         <!-- Checkout Form (Left) -->
         <div class="col-lg-8">
           <div class="card rounded-4 border p-4 p-md-5 bg-white shadow-xs">
+
             <h5 class="fw-bold text-navy mb-4"><i class="bi bi-person-lines-fill text-orange me-2"></i> Patient & Delivery Information</h5>
+              <form onsubmit="event.preventDefault(); tmHandleCheckout();">
 
-            <form onsubmit="event.preventDefault(); window.location.href='order-confirmation.php';">
-              <div class="row g-3 mb-4">
-                <div class="col-md-6">
-                  <label class="form-label small fw-bold text-navy">Patient / Buyer Full Name *</label>
-                  <input type="text" class="form-control" required placeholder="e.g. Ramesh Chandra">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label small fw-bold text-navy">WhatsApp / Mobile Number *</label>
-                  <input type="tel" class="form-control" required placeholder="10-digit mobile number">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label small fw-bold text-navy">Email Address *</label>
-                  <input type="email" class="form-control" required placeholder="name@example.com">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label small fw-bold text-navy">City / Area *</label>
-                  <input type="text" class="form-control" required value="Greater Noida West / Noida">
-                </div>
-                <div class="col-12">
-                  <label class="form-label small fw-bold text-navy">Delivery / Residence Address *</label>
-                  <textarea class="form-control" rows="2" required placeholder="Flat/House No., Society / Sector, Landmark..."></textarea>
-                </div>
-              </div>
+                <div class="row g-3 mb-4">
 
-              <h5 class="fw-bold text-navy mb-3"><i class="bi bi-credit-card-2-front-fill text-orange me-2"></i> Payment & Fitting Preference</h5>
-              <div class="d-flex flex-column gap-2 mb-4">
-                <div class="p-3 border rounded-3 bg-light d-flex align-items-center gap-3">
-                  <input type="radio" name="paymentOption" id="payClinic" checked class="form-check-input">
-                  <label for="payClinic" class="small fw-bold text-navy mb-0 cursor-pointer">
-                    Pay at Clinic / On Delivery (Cash, UPI, Cards, 0% EMI)
-                    <div class="small text-muted fw-normal">Verify device fit with audiologist before finalizing payment</div>
-                  </label>
-                </div>
-                <div class="p-3 border rounded-3 bg-light d-flex align-items-center gap-3">
-                  <input type="radio" name="paymentOption" id="payOnline" class="form-check-input">
-                  <label for="payOnline" class="small fw-bold text-navy mb-0 cursor-pointer">
-                    Instant Online Payment (UPI, Net Banking, Credit / Debit Card)
-                    <div class="small text-muted fw-normal">Instant digital confirmation and automated tax invoice</div>
-                  </label>
-                </div>
-              </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-navy">
+                      Patient / Buyer Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="e.g. Ramesh Chandra"
+                    >
+                  </div>
 
-              <button type="submit" class="tm-btn tm-btn-primary tm-btn-lg w-100"><i class="bi bi-check2-circle"></i> Place Order & Confirm Fitting</button>
-            </form>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-navy">
+                      WhatsApp / Mobile Number *
+                    </label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      required
+                      placeholder="10-digit mobile number"
+                    >
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-navy">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      required
+                      placeholder="name@example.com"
+                    >
+                  </div>
+
+                  <!-- City / Area -->
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-navy">
+                      City / Area *
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      value="Greater Noida West / Noida"
+                    >
+                  </div>
+
+
+                  <!-- Address Line 1 -->
+                  <div class="col-12">
+                    <label class="form-label small fw-bold text-navy">
+                      Address Line 1 *
+                      <span class="text-muted fw-normal">
+                        (House/Flat No., Building Name)
+                      </span>
+                    </label>
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="e.g. Flat 402, Riviera Tower, Gaur City 2"
+                    >
+                  </div>
+
+
+                  <!-- Address Line 2 -->
+                  <div class="col-12">
+                    <label class="form-label small fw-bold text-navy">
+                      Address Line 2
+                      <span class="text-muted fw-normal">
+                        (Sector / Society / Landmark — Optional)
+                      </span>
+                    </label>
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="e.g. Near Lotus Pond, Sector 16C, Greater Noida West"
+                    >
+                  </div>
+
+
+                  <!-- State -->
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-navy">
+                      State *
+                    </label>
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      value="Uttar Pradesh"
+                      placeholder="e.g. Uttar Pradesh"
+                    >
+                  </div>
+
+
+                  <!-- PIN Code -->
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-navy">
+                      PIN Code *
+                    </label>
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      inputmode="numeric"
+                      pattern="[0-9]{6}"
+                      maxlength="6"
+                      placeholder="e.g. 201306"
+                    >
+                  </div>
+
+                </div>
+
+
+                <!-- PAYMENT METHOD -->
+                <h5 class="fw-bold text-navy mb-3">
+                  <i class="bi bi-credit-card-2-front-fill text-orange me-2"></i>
+                  Payment Method
+                </h5>
+
+                <div class="d-flex flex-column gap-3 mb-4">
+
+                  <!-- Razorpay -->
+                  <div
+                    class="p-3 border rounded-3 d-flex align-items-start gap-3 tm-pay-card"
+                    id="payCardRazorpay"
+                    onclick="tmSelectPayment('payRazorpay', this)"
+                    style="cursor:pointer; border-color:#FF6B00 !important; background:#FFF8F3;"
+                  >
+
+                    <input
+                      type="radio"
+                      name="paymentOption"
+                      id="payRazorpay"
+                      checked
+                      class="form-check-input mt-1 flex-shrink-0"
+                    >
+
+                    <label
+                      for="payRazorpay"
+                      class="mb-0 w-100"
+                      style="cursor:pointer;"
+                    >
+
+                      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-1">
+
+                        <span class="fw-bold text-navy small">
+                          <i class="bi bi-lightning-charge-fill text-warning me-1"></i>
+                          Pay Online via Razorpay
+                        </span>
+
+                        <div class="d-flex gap-1 flex-wrap">
+
+                          <span
+                            class="badge bg-light border text-secondary fw-semibold"
+                            style="font-size:0.67rem;"
+                          >
+                            UPI
+                          </span>
+
+                          <span
+                            class="badge bg-light border text-secondary fw-semibold"
+                            style="font-size:0.67rem;"
+                          >
+                            Cards
+                          </span>
+
+                          <span
+                            class="badge bg-light border text-secondary fw-semibold"
+                            style="font-size:0.67rem;"
+                          >
+                            Net Banking
+                          </span>
+
+                          <span
+                            class="badge bg-light border text-secondary fw-semibold"
+                            style="font-size:0.67rem;"
+                          >
+                            EMI
+                          </span>
+
+                        </div>
+
+                      </div>
+
+                      <div class="small text-muted fw-normal">
+                        Secure 256-bit encrypted gateway. Instant confirmation & GST invoice.
+                      </div>
+
+                    </label>
+                  </div>
+
+
+                  <!-- Cash on Delivery -->
+                  <div
+                    class="p-3 border rounded-3 bg-white d-flex align-items-start gap-3 tm-pay-card"
+                    id="payCardCOD"
+                    onclick="tmSelectPayment('payCOD', this)"
+                    style="cursor:pointer;"
+                  >
+
+                    <input
+                      type="radio"
+                      name="paymentOption"
+                      id="payCOD"
+                      class="form-check-input mt-1 flex-shrink-0"
+                    >
+
+                    <label
+                      for="payCOD"
+                      class="mb-0 w-100"
+                      style="cursor:pointer;"
+                    >
+
+                      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-1">
+
+                        <span class="fw-bold text-navy small">
+                          <i class="bi bi-cash-stack text-success me-1"></i>
+                          Cash on Delivery
+                        </span>
+
+                        <span
+                          class="badge bg-success-subtle text-success border border-success-subtle"
+                          style="font-size:0.67rem;"
+                        >
+                          No Advance Required
+                        </span>
+
+                      </div>
+
+                      <div class="small text-muted fw-normal">
+                        Pay cash or UPI at your doorstep when our audiologist arrives.
+                        Device trial before payment.
+                      </div>
+
+                    </label>
+                  </div>
+
+                </div>
+
+
+                <!-- PLACE ORDER -->
+                <button
+                  type="submit"
+                  class="tm-btn tm-btn-primary tm-btn-lg w-100"
+                >
+                  <i class="bi bi-check2-circle me-1"></i>
+                  Place Order
+                </button>
+
+              </form>
           </div>
         </div>
 
         <!-- Summary (Right) -->
         <div class="col-lg-4">
-          <div class="card rounded-4 border p-4 bg-white shadow-xs sticky-top" style="top: 85px;">
+          <div class="card rounded-4 border p-4 bg-white shadow-xs sticky-top tm-checkout-summary-card" style="top: 85px;">
             <h5 class="fw-bold text-navy mb-3">Order Items</h5>
             <div id="tmCheckoutItemsList" class="mb-3 border-bottom pb-2"></div>
             <div class="d-flex justify-content-between mb-2 small text-secondary">
@@ -91,7 +309,7 @@ include __DIR__ . '/includes/header.php';
               <strong class="text-navy" id="tmCheckoutSubtotal">₹0</strong>
             </div>
             <div class="d-flex justify-content-between mb-2 small text-secondary">
-              <span>Home Delivery & Fitting:</span>
+              <span>Home Delivery &amp; Fitting:</span>
               <strong class="text-success">FREE</strong>
             </div>
             <div class="d-flex justify-content-between mb-3 border-top pt-3 fs-5">
@@ -99,7 +317,7 @@ include __DIR__ . '/includes/header.php';
               <span class="fw-bold text-orange" id="tmCheckoutGrandTotal">₹0</span>
             </div>
             <div class="small text-muted bg-light p-3 rounded-3">
-              <i class="bi bi-shield-check text-success me-1"></i> Includes Official Manufacturer Warranty, Calibration Slip & GST Invoice.
+              <i class="bi bi-shield-check text-success me-1"></i> Includes Official Manufacturer Warranty, Calibration Slip &amp; GST Invoice.
             </div>
           </div>
         </div>
@@ -110,6 +328,45 @@ include __DIR__ . '/includes/header.php';
 
 <?php ob_start(); ?>
 <script>
+    function tmSelectPayment(radioId, card) {
+      document.querySelectorAll('.tm-pay-card').forEach(c => {
+        c.style.borderColor = '';
+        c.style.background = '#FFFFFF';
+      });
+      document.getElementById(radioId).checked = true;
+      card.style.borderColor = '#FF6B00';
+      card.style.background = '#FFF8F3';
+    }
+
+    /* Load saved address on page load */
+    function tmLoadSavedAddress() {
+      const saved = localStorage.getItem('tm_delivery_address');
+      if (saved) {
+        try {
+          const addr = JSON.parse(saved);
+          // Remove old hardcoded clinic address if still cached
+          if ((addr.line1 || '').toLowerCase().includes('gaur city mall') ||
+              (addr.line1 || '').toLowerCase().includes('clinic')) {
+            localStorage.removeItem('tm_delivery_address');
+            return;
+          }
+          tmDisplaySavedAddress(addr);
+        } catch(e) {
+          localStorage.removeItem('tm_delivery_address');
+        }
+      }
+    }
+
+    function tmHandleCheckout() {
+      const method = document.querySelector('input[name="paymentOption"]:checked').id;
+      if (method === 'payRazorpay') {
+        // TODO: Integrate Razorpay SDK here → rzp.open();
+        alert('Razorpay payment gateway will be loaded here.\nPlease add your Razorpay key_id to activate.');
+        return;
+      }
+      window.location.href = 'order-confirmation.php';
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       const totals = Cart.calculateTotals();
       const subEl = document.getElementById('tmCheckoutSubtotal');
